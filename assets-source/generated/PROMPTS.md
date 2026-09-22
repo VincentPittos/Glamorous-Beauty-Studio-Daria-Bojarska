@@ -1,12 +1,16 @@
 # Prompty do grafik AI
 
-Grafiki miały powstać przez Higgsfield, model Nano Banana Pro. Konto podpięte
-do tej sesji ma **zero kredytów i plan darmowy**, więc nic nie zostało
-wygenerowane. Poniżej komplet promptów do wygenerowania ręcznie.
+**Sześć kadrów do filarów oferty jest już na stronie.** Przyszły z Dysku
+Google, z podfolderu `Oferta`, i leżą w `assets-source/uslugi/`. Prompty
+poniżej zostają jako zapis tego, co było zamawiane, i na wypadek gdyby
+któryś kadr trzeba było powtórzyć albo dołożyć nowy filar.
 
-Do czasu wygenerowania na stronie stoją neutralne obrazki zastępcze
-odziedziczone po szablonie. Nie przedstawiają nikogo i niczego nie obiecują,
-ale są tylko wypełniaczem.
+Kadry `proces-01` i `cta-tlo` nadal nie powstały, ale obie sekcje radzą sobie
+bez nich: pierwsza stoi na ikonach, druga na ornamencie i gradiencie.
+
+Grafiki miały powstać przez Higgsfield, model Nano Banana Pro. Konto podpięte
+do tej sesji ma zero kredytów i plan darmowy, więc tą drogą nic nie zostało
+wygenerowane.
 
 ## Zasady twarde
 

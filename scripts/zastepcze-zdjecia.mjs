@@ -9,16 +9,20 @@
  * zostal ani jeden slad po szablonie.
  *
  * Uruchamia sie go recznie i tylko wtedy, gdy zmieni sie lista filarow.
- * Po wrzuceniu prawdziwych zdjec do assets-source przestaje byc potrzebny,
- * bo npm run zdjecia nadpisze wszystko, co tu powstalo.
+ *
+ * Kadru, dla ktorego lezy juz oryginal w assets-source, skrypt NIE RUSZA.
+ * Bez tego jedno uruchomienie z rozpedu zamienialoby prawdziwe zdjecia
+ * z powrotem w brazowe prostokaty.
  */
 import sharp from 'sharp'
-import { mkdir, readFile } from 'node:fs/promises'
+import { mkdir, readFile, stat } from 'node:fs/promises'
 import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
 const KORZEN = join(dirname(fileURLToPath(import.meta.url)), '..')
+const ZRODLA = join(KORZEN, 'assets-source')
 const CEL = join(KORZEN, 'public', 'images')
+const ROZSZERZENIA = ['jpg', 'jpeg', 'png', 'webp']
 
 const CZEKOLADA = '#4a2912'
 const BRAZ = '#633b1e'
@@ -58,7 +62,28 @@ function plansza(szerokosc, wysokosc, tytul, podpis) {
 </svg>`)
 }
 
-async function zapisz(sciezka, svg) {
+/** Czy dla tego kadru lezy juz oryginal od klientki. */
+async function maOryginal(nazwaBezRozszerzenia) {
+  for (const rozszerzenie of ROZSZERZENIA) {
+    const kandydat = join(ZRODLA, `${nazwaBezRozszerzenia}.${rozszerzenie}`)
+    try {
+      await stat(kandydat)
+      return true
+    } catch (powod) {
+      // Brak pliku znaczy tylko tyle, ze szukamy dalej. Kazdy inny blad
+      // przepuszczamy, bo polkniety zamienial sie w cichy komunikat
+      // o braku oryginalu i kasowal prawdziwe zdjecie.
+      if (powod.code !== 'ENOENT') throw powod
+    }
+  }
+  return false
+}
+
+async function zapisz(sciezka, svg, zrodlo) {
+  if (zrodlo && (await maOryginal(zrodlo))) {
+    console.log(`  ${sciezka.replace(`${KORZEN}/`, '').padEnd(46)} pomijam, jest oryginal`)
+    return
+  }
   await mkdir(dirname(sciezka), { recursive: true })
   const wynik = await sharp(svg).webp({ quality: 82 }).toFile(sciezka)
   console.log(`  ${sciezka.replace(`${KORZEN}/`, '').padEnd(46)} ${wynik.width}x${wynik.height}`)
@@ -74,24 +99,31 @@ const { pozycje: zdjecia } = JSON.parse(
 console.log('Zdjecia zastepcze w palecie marki\n')
 
 console.log('Sekcja glowna i o nas')
-await zapisz(join(CEL, 'hero', 'zabieg.webp'), plansza(762, 846, 'sekcja główna', '762 x 846'))
+await zapisz(join(CEL, 'hero', 'zabieg.webp'), plansza(762, 846, 'sekcja główna', '762 x 846'), 'hero-foto')
 await zapisz(
   join(CEL, 'o-nas', 'wlascicielka.webp'),
   plansza(1000, 1250, 'Daria Bojarska', '1000 x 1250'),
+  'wlascicielka',
 )
 
 console.log('\nFilary oferty')
 for (const filar of filary) {
-  await zapisz(join(CEL, 'uslugi', `${filar.id}.webp`), plansza(800, 800, filar.nazwa, '800 x 800'))
+  await zapisz(
+    join(CEL, 'uslugi', `${filar.id}.webp`),
+    plansza(800, 800, filar.nazwa, '800 x 800'),
+    join('uslugi', filar.id),
+  )
 }
 
 console.log('\nPortfolio')
 for (const [indeks, zdjecie] of zdjecia.entries()) {
   const podpis = `efekt ${indeks + 1} z ${zdjecia.length}`
-  await zapisz(join(CEL, 'portfolio', `${zdjecie.id}.webp`), plansza(800, 1000, podpis, '800 x 1000'))
+  const zrodlo = join('portfolio', zdjecie.id)
+  await zapisz(join(CEL, 'portfolio', `${zdjecie.id}.webp`), plansza(800, 1000, podpis, '800 x 1000'), zrodlo)
   await zapisz(
     join(CEL, 'portfolio', `${zdjecie.id}-mini.webp`),
     plansza(400, 500, podpis, '400 x 500'),
+    zrodlo,
   )
 }
 

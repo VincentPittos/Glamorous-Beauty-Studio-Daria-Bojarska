@@ -4,20 +4,25 @@ Tu leżą oryginały. Skrypt `npm run zdjecia` czyta je, przerabia na WebP
 i zapisuje do `public/images/`. Oryginały nie trafiają do builda, więc mogą
 ważyć swoje.
 
-## Czego brakuje i skąd to wziąć
+## Co tu już jest
 
-Wszystkie pliki leżą na Dysku Google, w folderze **Glamorous Beauty Studio
-Daria Bojarska** (`1Ewr1F1DRg4NgRFShA333FNFeexqcmvb9`). Sesja, w której
-powstawała ta strona, nie miała dostępu sieciowego do `drive.google.com`,
-więc zdjęcia trzeba pobrać ręcznie i położyć tutaj.
-
-| Gdzie położyć | Co to jest | Skąd |
+| Plik | Co to jest | Skąd |
 | --- | --- | --- |
-| `hero-foto.jpg` | sekcja główna | {TODO: brak w folderze na Dysku, do wybrania z Portfolio albo do wygenerowania, patrz `generated/PROMPTS.md`} |
-| `wlascicielka.jpg` | sekcja o nas | `O nas - Daria Bojarska.jpg` (`1tcwFscRLBaL_GQt4x6aJT3ZbsVfnKuIv`) |
-| `uslugi/<id>.jpg` | po jednym na filar oferty | `generated/PROMPTS.md`, sześć kadrów |
-| `portfolio/portfolio-01.jpg` do `portfolio-12.jpg` | efekty i praca w gabinecie | podfolder `Portfolio` (`1Lj1_LUx0jZ-xSoUmyKlhhdlGyVq2aE83`) |
+| `hero-foto.webp` | sekcja główna | wgrane bezpośrednio w rozmowie |
+| `wlascicielka.jpg` | sekcja o nas | `O nas - Daria Bojarska.jpg` z Dysku |
+| `uslugi/<id>.png`, sześć plików | po jednym na filar oferty | podfolder `Oferta` z Dysku |
+| `portfolio/portfolio-01.jpg` do `-12.jpg` | efekty i praca w gabinecie | podfolder `Portfolio` z Dysku |
+
+## Czego jeszcze brakuje
+
+| Plik | Co to jest | Skąd |
+| --- | --- | --- |
 | `logo.png` | logotyp | `Logo.png` (`1CsE2rjMReywOJqCnJwF1N66f7rFmbphm`) |
+
+Folder na Dysku Google nazywa się **Glamorous Beauty Studio Daria Bojarska**
+(`1Ewr1F1DRg4NgRFShA333FNFeexqcmvb9`). Bezpośrednie połączenie do
+`drive.google.com` jest w środowisku roboczym zablokowane polityką sieciową,
+więc pliki idą przez konektor Dysku, a nie przez `curl`.
 
 Identyfikatory filarów, czyli nazwy plików w `uslugi/`:
 
@@ -27,11 +32,10 @@ zdrowa-skora  problemy-skorne  odmladzanie  sylwetka  oprawa-oka  doradztwo
 
 ## Zdjęcia portfolio
 
-Pliki na Dysku mają nazwy z Facebooka, a skrypt bierze je alfabetycznie.
-Przed wrzuceniem **przemianuj je po kolei**, zgodnie z polem `zrodloNaDysku`
-w `src/data/portfolio.json`. Pierwsze zdjęcie zajmuje w mozaice dwa pola
-w pionie i w poziomie, więc na pozycji `portfolio-01` postaw najmocniejszy
-kadr.
+Pliki na Dysku mają nazwy z Facebooka, a skrypt bierze je alfabetycznie,
+więc leżą tu przemianowane po kolei, zgodnie z polem `zrodloNaDysku`
+w `src/data/portfolio.json`. Kolejność wyświetlania ustala ten plik, nie
+nazwy, więc żeby przestawić galerię, przestaw pozycje w `portfolio.json`.
 
 **Nie retuszuj efektów zabiegów.** Żadnego wygładzania skóry, zmiany koloru
 ani filtrów upiększających. To jest dowód, a nie ilustracja. Wolno kadrować,
@@ -57,7 +61,8 @@ geometrią zastępczą i trzeba go podmienić na ten z pliku marki.
 npm run zdjecia
 ```
 
-Skrypt wypisze wymiary każdego pliku. Dwie rzeczy przepisz ręcznie:
+Skrypt wypisze wymiary każdego pliku. Dwie rzeczy przepisz ręcznie po
+dołożeniu nowych zdjęć:
 
 1. proporcje zdjęcia głównego do `--hero-proporcje` w `src/app/marka.css`,
 2. wymiary zdjęć portfolio do `src/data/portfolio.json`.

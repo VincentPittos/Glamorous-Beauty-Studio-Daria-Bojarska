@@ -94,7 +94,7 @@ export function Oferta() {
             }
           }}
         >
-          {uslugi.map((usluga, indeks) => (
+          {uslugi.map((usluga) => (
             <li key={usluga.id} className={style.karta}>
               <div className={style.obrazek}>
                 <Image
@@ -103,7 +103,15 @@ export function Oferta() {
                   width={800}
                   height={800}
                   sizes="(max-width: 720px) 80vw, 33vw"
-                  loading={indeks < 3 ? undefined : 'lazy'}
+                  /*
+                    Wszystkie karty ładują się leniwie. W szablonie pierwsze
+                    trzy wchodziły od razu, bo oferta stała zaraz pod sekcją
+                    główną. Teraz jest czwartą sekcją, więc żadna z nich nie
+                    mieści się na pierwszym ekranie, a trzy zdjęcia po
+                    kilkadziesiąt kilobajtów zabierały pasmo zdjęciu, które
+                    naprawdę widać.
+                  */
+                  loading="lazy"
                 />
               </div>
 

@@ -132,6 +132,11 @@ Zmienne środowiskowe: wzór w `.env.example`, opis w `RAPORT.md`.
   kremie, i na czekoladzie.
 - **Cennik i FAQ stoją na znacznikach `details`**, więc rozwijają się bez
   JavaScriptu i obsługują klawiaturę bez dokładania atrybutów.
+- **Zdjęcia w kartach oferty ładują się leniwie.** Oferta jest czwartą
+  sekcją, więc żadna karta nie mieści się na pierwszym ekranie.
+- **`scripts/zastepcze-zdjecia.mjs` pomija kadry, dla których leży już
+  oryginał** w `assets-source`. Bez tego jedno uruchomienie z rozpędu
+  zamieniało prawdziwe zdjęcia z powrotem w brązowe prostokąty.
 - **Galeria efektów ma kwadratowe pola.** Zestawienia przed i po też są
   kwadratowe, więc w kwadratowym polu nic się nie gubi. Przy polach pionowych
   przycięcie zjadało brzegi i na miniaturze zostawała połowa porównania.
@@ -152,10 +157,13 @@ stoi zakres z kilku uruchomień, a nie jeden najlepszy wynik:
 
 | Strona | Wydajność | Dostępność | Dobre praktyki | SEO |
 | --- | --- | --- | --- | --- |
-| `/` | 90 do 97 | 100 | 100 | 100 |
-| `/zabiegi/sylwetka` | 95 do 98 | 100 | 100 | 100 |
+| `/` | 85 do 98, mediana około 93 | 100 | 100 | 100 |
+| `/zabiegi/sylwetka` | 89 do 98 | 100 | 100 | 100 |
 
-Mierzone na prawdziwych zdjęciach, nie na kadrach zastępczych.
+Mierzone na prawdziwych zdjęciach. Rozrzut wydajności bierze się z maszyny,
+nie ze strony: Lighthouse liczy ten wynik na symulowanym łączu i jest czuły
+na obciążenie procesora, a pomiary szły w kontenerze współdzielonym z innymi
+zadaniami. Zmierz go ponownie po wdrożeniu, na docelowej domenie.
 
 `npm run kontrast`: 26 z 26 par przechodzi próg WCAG AA.
 

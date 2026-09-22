@@ -27,7 +27,7 @@ publikację albo trzeba to potwierdzić, zanim strona zobaczy pierwszą klientk�
 | **Ogólne zalecenia przed wizytą** | `src/data/faq.json` | Na przykład co odstawić przed peelingami i terapiami przebarwień. |
 | **Logo w wektorze** | `assets-source/` | Patrz punkt 1.3. |
 | **Zgody na wizerunek klientek** | galeria efektów | Patrz punkt 1.4, to blokuje publikację. |
-| **Zdjęcia do sześciu filarów oferty** | `assets-source/uslugi/` | Prompty w `assets-source/generated/PROMPTS.md`. Do czasu ich wygenerowania w kartach oferty stoją kadry zastępcze. |
+| **Nic więcej po stronie zdjęć** | | Sekcja główna, O nas, sześć filarów oferty i galeria efektów mają już prawdziwe zdjęcia. Zostało tylko logo w wektorze. |
 
 ### 1.2 Ode mnie albo od Ciebie
 
@@ -47,7 +47,9 @@ publikację albo trzeba to potwierdzić, zanim strona zobaczy pierwszą klientk�
 
 - zdjęcie sekcji głównej, wgrane bezpośrednio w rozmowie,
 - `O nas - Daria Bojarska.jpg` z Dysku, w sekcji O nas,
-- dwanaście zdjęć z podfolderu `Portfolio` z Dysku, w galerii efektów.
+- dwanaście zdjęć z podfolderu `Portfolio` z Dysku, w galerii efektów,
+- sześć zdjęć z podfolderu `Oferta` z Dysku, po jednym na filar, w kartach
+  oferty i na podstronach.
 
 Pliki z Dysku udało się pobrać przez konektor Dysku Google. Bezpośrednie
 połączenie do `drive.google.com` jest w tym środowisku zablokowane polityką
@@ -61,11 +63,10 @@ na stronie powstają z nich przez `npm run zdjecia`.
   jest jeszcze wgrane. Logotyp na stronie składa się z tekstu i rysowanego
   sygnetu, a diament w `icon.svg` i w ikonie `diament` jest geometrią
   zastępczą.
-- **Sześć zdjęć do filarów oferty.** Konto Higgsfield podpięte do tej sesji
-  ma zero kredytów i plan darmowy, więc grafik nie wygenerowałem. Komplet
-  promptów leży w `assets-source/generated/PROMPTS.md`. W kartach oferty
-  i na podstronach stoją do tego czasu kadry zastępcze rysowane w palecie
-  marki, skryptem `node scripts/zastepcze-zdjecia.mjs`.
+Kadrów zastępczych nie ma już nigdzie. Skrypt `node scripts/zastepcze-zdjecia.mjs`
+zostaje w repozytorium na wypadek dołożenia nowego filaru, ale **pomija każdy
+kadr, dla którego leży już oryginał w `assets-source`**, więc uruchomienie go
+z rozpędu nie zamieni prawdziwych zdjęć z powrotem w brązowe prostokąty.
 
 ### 1.4 Trzy rzeczy do rozstrzygnięcia przy zdjęciach i opiniach
 
@@ -75,7 +76,13 @@ wykorzystanie wizerunku **na stronie internetowej**. Zgoda na publikację na
 Facebooku nie przenosi się automatycznie na inne kanały. To blokuje
 publikację galerii, nie da się tego obejść.
 
-**Dwa zdjęcia pokazują zabiegi spoza oferty.** Na jednym kadrze pracuje
+**Na zdjęciu do filaru „Indywidualne doradztwo zabiegowe" widać twarz
+kosmetolożki.** W ustaleniach było, że przy kadrach z kosmetologiem pokazujemy
+wyłącznie dłonie i przedramiona, żeby żadnej z tych osób nie pomylić z Panią
+Darią. To zdjęcie przyszło z Dysku w takiej postaci, więc zostawiam decyzję
+Pani Darii: zostaje jak jest, czy wymieniamy kadr.
+
+**Dwa zdjęcia w galerii pokazują zabiegi spoza oferty.** Na jednym kadrze pracuje
 urządzenie z napisem **EMSzero**, na innym widnieje podpis **LIP FLIP**.
 Żadnego z tych zabiegów nie ma w opisanej ofercie. Albo oferta na stronie
 jest niepełna i trzeba ją uzupełnić, albo te dwa zdjęcia nie powinny stać
@@ -141,13 +148,24 @@ wynik. Pomiary na prawdziwych zdjęciach, nie na kadrach zastępczych.
 
 | Strona | Wydajność | Dostępność | Dobre praktyki | SEO |
 | --- | --- | --- | --- | --- |
-| `/` | **90 do 97** | **100** | **100** | **100** |
-| `/zabiegi/sylwetka` | **95 do 98** | **100** | **100** | **100** |
+| `/` | **85 do 98**, mediana około 93 | **100** | **100** | **100** |
+| `/zabiegi/sylwetka` | **89 do 98** | **100** | **100** | **100** |
 
-Prawdziwe zdjęcia kosztowały kilka punktów wydajności. Odrobiły je dwie
-zmiany: zdjęcie sekcji głównej idzie przez optymalizator Next.js, więc
-telefon dostaje wariant 640 pikseli zamiast pełnych 1190, a krój odręczny
-jest podcięty z 73 kB do 7 kB.
+**Rozrzut wydajności bierze się z maszyny, nie ze strony.** Lighthouse liczy
+ten wynik na symulowanym łączu i jest bardzo czuły na obciążenie procesora,
+a pomiary robione były w kontenerze współdzielonym z innymi zadaniami. Ten
+sam build mierzony pod rząd dawał 85 i 98. Na docelowym hostingu wynik będzie
+stabilniejszy, ale zmierzyć go trzeba po wdrożeniu, na prawdziwej domenie.
+
+Trzy zmiany, które odrobiły koszt prawdziwych zdjęć:
+
+- zdjęcie sekcji głównej idzie przez optymalizator Next.js, więc telefon
+  dostaje wariant 640 pikseli zamiast pełnych 1190,
+- krój odręczny jest podcięty z 73 kB do 7 kB,
+- wszystkie zdjęcia w kartach oferty ładują się leniwie. W szablonie pierwsze
+  trzy wchodziły od razu, bo oferta stała zaraz pod sekcją główną. Po
+  przeniesieniu O nas na drugą sekcję oferta zjechała na czwartą pozycję
+  i te trzy zdjęcia zabierały pasmo zdjęciu, które naprawdę widać.
 
 Progi z briefu: wydajność 90, dostępność 95, SEO 100. Wszystkie przekroczone
 w każdym przebiegu.
@@ -169,13 +187,8 @@ jak ma, ale sama strona nie.
 | --- | --- | --- |
 | `public/images/hero/zabieg.webp` | sekcja główna | **prawdziwe**, wgrane w rozmowie, oryginał w `assets-source/hero-foto.webp` |
 | `public/images/o-nas/wlascicielka.webp` | O nas | **prawdziwe**, `O nas - Daria Bojarska.jpg` z Dysku |
-| `public/images/uslugi/zdrowa-skora.webp` | filar 1, karta i podstrona | zastępczy, prompt w `PROMPTS.md` |
-| `public/images/uslugi/problemy-skorne.webp` | filar 2 | j.w. |
-| `public/images/uslugi/odmladzanie.webp` | filar 3 | j.w. |
-| `public/images/uslugi/sylwetka.webp` | filar 4, sylwetka i drenaż | j.w. |
-| `public/images/uslugi/oprawa-oka.webp` | filar 5 | j.w. |
-| `public/images/uslugi/doradztwo.webp` | filar 6 | j.w. |
 | `public/images/portfolio/portfolio-01` do `-12`, duże i mini | Efekty | **prawdziwe**, podfolder `Portfolio` z Dysku |
+| `public/images/uslugi/<id>.webp`, sześć plików | karty oferty i podstrony filarów | **prawdziwe**, podfolder `Oferta` z Dysku |
 | `public/fonts/pinyon-script-podciety.woff2` | krój odręczny | podcięty skryptem `npm run kroj` |
 | `src/app/icon.svg` | ikona karty przeglądarki | sygnet z diamentem, **geometria zastępcza** |
 
@@ -327,6 +340,7 @@ ale nie jest poradą prawną.
 - [x] `--hero-proporcje` i wymiary w `portfolio.json` przepisane
 - [ ] Zgody klientek na wizerunek potwierdzone
 - [ ] Rozstrzygnięte, co ze zdjęciami EMSzero i LIP FLIP
+- [ ] Rozstrzygnięte, czy zdjęcie doradztwa z widoczną twarzą kosmetolożki zostaje
 - [ ] Opisy zdjęć w galerii potwierdzone z Panią Darią
 - [ ] Dłuższe opinie porównane z Google, czy nic nie zostało ucięte
 - [ ] Logo w wektorze podmienione w `Logo.tsx` i `icon.svg`
