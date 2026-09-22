@@ -1,0 +1,77 @@
+.siatka {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.85fr) 1fr;
+  gap: clamp(28px, 4.4vw, 64px);
+  align-items: center;
+}
+
+.ramkaZdjecia {
+  position: relative;
+}
+
+/* Cienka złota ramka przesunięta względem zdjęcia. Jeden detal zamiast
+   cienia pod każdą kartą na stronie. */
+.ramkaZdjecia::before {
+  content: '';
+  position: absolute;
+  inset: 18px -18px -18px 18px;
+  border: 1px solid var(--akcent-ciemne);
+  opacity: 0.55;
+}
+
+.zdjecie {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.tekst {
+  font-size: 1.05rem;
+  color: var(--tusz);
+}
+
+.naglowek {
+  margin-bottom: clamp(16px, 2vw, 24px);
+}
+
+/* Krótka złota kreska pod nagłówkiem, jedyny ozdobnik w tej sekcji. */
+.naglowek::after {
+  content: '';
+  display: block;
+  width: 64px;
+  height: 1px;
+  margin-top: 20px;
+  background: var(--akcent-ciemne);
+}
+
+.tekst p {
+  margin-bottom: 1.2em;
+}
+
+.przycisk {
+  margin-top: clamp(12px, 2vw, 22px);
+}
+
+@media (max-width: 860px) {
+  .siatka {
+    grid-template-columns: 1fr;
+    gap: clamp(40px, 9vw, 56px);
+  }
+
+  .ramkaZdjecia {
+    max-width: 420px;
+  }
+
+  .ramkaZdjecia::before {
+    inset: 14px -14px -14px 14px;
+  }
+}
+
+/* Podpis odręczny pod akapitami. Lewa krawędź zostaje w linii z tekstem,
+   a odstęp nad nim jest większy niż między akapitami, żeby czytał się jak
+   zamknięcie sekcji, a nie kolejne zdanie. */
+.podpis {
+  margin: clamp(18px, 2.4vw, 26px) 0 clamp(18px, 2.4vw, 26px);
+  line-height: 1;
+}

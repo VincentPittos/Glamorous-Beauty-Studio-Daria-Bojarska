@@ -1,0 +1,69 @@
+.siatka {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(18px, 2.2vw, 30px);
+}
+
+.kafel {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: clamp(20px, 2vw, 26px);
+  background: var(--biel);
+  border: 1px solid var(--krem-2);
+  border-radius: 2px;
+  /* Cienka złota kreska u góry, ta sama co przy nagłówkach sekcji. */
+  box-shadow: inset 0 2px 0 0 rgb(var(--akcent-rgb) / 0.55);
+}
+
+.tytul {
+  font-size: clamp(1.08rem, 1rem + 0.35vw, 1.25rem);
+  color: var(--tusz);
+  margin: 2px 0 0;
+}
+
+.tekst {
+  color: var(--tusz-2);
+  font-size: 0.98rem;
+  margin: 0;
+}
+
+@media (max-width: 980px) {
+  .siatka {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .siatka {
+    grid-template-columns: 1fr;
+  }
+
+  .kafel {
+    /* Na telefonie medalion idzie obok tytułu, żeby kafelki nie urosły
+       w cztery wysokie prostokąty, przez które trzeba przewijać. */
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-areas:
+      'znak tytul'
+      'tekst tekst';
+    align-items: center;
+    column-gap: 14px;
+  }
+
+  .kafel > :global(.medalion) {
+    grid-area: znak;
+  }
+
+  .tytul {
+    grid-area: tytul;
+  }
+
+  .tekst {
+    grid-area: tekst;
+    margin-top: 10px;
+  }
+}

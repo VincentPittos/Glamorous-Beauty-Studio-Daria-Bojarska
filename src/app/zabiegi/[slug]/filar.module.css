@@ -1,0 +1,279 @@
+.okruszki {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: clamp(20px, 2.4vw, 30px);
+  font-size: 0.88rem;
+  color: var(--mgla);
+}
+
+.okruszki a {
+  color: var(--akcent-jasne);
+  text-underline-offset: 3px;
+}
+
+.okruszki span[aria-hidden] {
+  color: rgb(var(--akcent-rgb) / 0.6);
+}
+
+.gora {
+  display: grid;
+  grid-template-columns: 1fr minmax(280px, 44%);
+  align-items: center;
+  gap: clamp(26px, 4vw, 54px);
+}
+
+.naglowekFilaru :global(.medalion) {
+  margin-bottom: 18px;
+}
+
+.podtytul {
+  margin: 0 0 6px;
+  color: var(--akcent);
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  text-transform: lowercase;
+}
+
+.tytul {
+  font-family: var(--kroj-naglowek);
+  font-size: clamp(2.1rem, 1.5rem + 2.6vw, 3.3rem);
+  font-weight: 400;
+  line-height: 1.1;
+  margin: 0 0 18px;
+  color: var(--biel);
+}
+
+.dlaKogo {
+  color: var(--biel);
+  font-size: clamp(1.04rem, 1rem + 0.25vw, 1.16rem);
+  max-width: 48ch;
+}
+
+.efekt {
+  color: var(--mgla);
+  max-width: 48ch;
+  margin-bottom: clamp(24px, 3vw, 32px);
+}
+
+.zdjecie {
+  border: 1px solid rgb(var(--akcent-rgb) / 0.4);
+  border-radius: 2px;
+  overflow: hidden;
+  aspect-ratio: 1;
+}
+
+.zdjecie img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.zabiegi {
+  list-style: none;
+  margin: clamp(22px, 2.6vw, 30px) 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: clamp(16px, 2vw, 24px);
+}
+
+.zabieg {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: clamp(20px, 2.2vw, 26px);
+  background: var(--ivory);
+  border: 1px solid var(--krem-2);
+  border-top: 2px solid var(--akcent);
+  border-radius: 2px;
+}
+
+.nazwaZabiegu {
+  margin: 0;
+  color: var(--tusz);
+  font-size: clamp(1.12rem, 1rem + 0.4vw, 1.3rem);
+}
+
+.opisZabiegu {
+  margin: 0;
+  color: var(--tusz-2);
+  font-size: 0.98rem;
+}
+
+.linkZabiegu {
+  margin-top: auto;
+  padding-top: 8px;
+  align-self: flex-start;
+  font-family: var(--kroj-naglowek);
+  font-size: 1rem;
+  color: var(--akcent-tekst);
+  text-decoration: none;
+  border-bottom: 1px solid rgb(var(--akcent-ciemne-rgb) / 0.55);
+  padding-bottom: 3px;
+  transition: border-color var(--przejscie);
+}
+
+.linkZabiegu:hover {
+  border-bottom-color: var(--akcent-ciemne);
+}
+
+.cennik {
+  margin-top: clamp(34px, 4vw, 48px);
+  padding: clamp(22px, 2.6vw, 30px);
+  background: var(--biel);
+  border: 1px solid var(--krem-2);
+  border-radius: 2px;
+}
+
+.tytulCennika {
+  margin: 0 0 12px;
+  font-size: clamp(1.4rem, 1.2rem + 0.8vw, 1.9rem);
+}
+
+.dopisek {
+  color: var(--tusz-2);
+  font-size: 0.95rem;
+}
+
+.ceny {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.ceny li {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  color: var(--tusz);
+}
+
+.wypelniacz {
+  flex: 1;
+  border-bottom: 1px dotted var(--krem-2);
+  translate: 0 -4px;
+}
+
+.cena {
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.cenaBrak {
+  color: var(--tusz-2);
+  font-size: 0.9rem;
+  font-style: italic;
+  text-align: right;
+}
+
+.faq {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: clamp(22px, 2.6vw, 30px) 0 clamp(34px, 4vw, 48px);
+}
+
+.pytanie {
+  background: var(--biel);
+  border: 1px solid var(--krem-2);
+  border-radius: 2px;
+}
+
+.pytanie summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 20px;
+  min-height: 48px;
+  cursor: pointer;
+  color: var(--tusz);
+  font-family: var(--kroj-naglowek);
+  font-size: 1.08rem;
+  list-style: none;
+}
+
+.pytanie summary::-webkit-details-marker {
+  display: none;
+}
+
+.znacznik {
+  flex: none;
+  color: var(--akcent-ciemne);
+  transition: rotate var(--przejscie);
+}
+
+.pytanie[open] .znacznik {
+  rotate: 45deg;
+}
+
+.pytanie p {
+  margin: 0;
+  padding: 0 20px 18px;
+  color: var(--tusz-2);
+  font-size: 0.98rem;
+}
+
+.tytulInnych {
+  font-size: clamp(1.4rem, 1.2rem + 0.8vw, 1.9rem);
+}
+
+.inne {
+  list-style: none;
+  margin: clamp(18px, 2.2vw, 24px) 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 12px;
+}
+
+.inne a {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 18px;
+  min-height: 48px;
+  background: var(--biel);
+  border: 1px solid var(--krem-2);
+  border-radius: 2px;
+  color: var(--tusz);
+  text-decoration: none;
+  transition: border-color var(--przejscie);
+}
+
+.inne a:hover {
+  border-color: var(--akcent-ciemne);
+}
+
+.inne strong {
+  display: block;
+  font-weight: 500;
+  font-family: var(--kroj-naglowek);
+  font-size: 1.02rem;
+}
+
+.podtytulInnego {
+  display: block;
+  color: var(--tusz-2);
+  font-size: 0.86rem;
+}
+
+@media (max-width: 900px) {
+  .gora {
+    grid-template-columns: 1fr;
+  }
+
+  /* Na telefonie zdjęcie idzie pod tekst, bo nagłówek ma być pierwszą
+     rzeczą, którą klientka zobaczy po wejściu z wyszukiwarki. */
+  .zdjecie {
+    order: 2;
+    max-width: 460px;
+  }
+}

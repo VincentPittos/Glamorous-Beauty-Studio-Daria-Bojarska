@@ -1,0 +1,384 @@
+.podglad {
+  margin: 0 0 20px;
+  padding: 12px 15px;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: var(--tusz-2);
+  background: var(--krem);
+  border-left: 3px solid var(--akcent-ciemne);
+}
+
+.uklad {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.78fr);
+  gap: clamp(20px, 2.4vw, 32px);
+  align-items: start;
+}
+
+.nawigacja {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.miesiac {
+  font-family: var(--kroj-naglowek);
+  font-size: 1.15rem;
+  text-align: center;
+  flex: 1;
+}
+
+.strzalka {
+  width: 48px;
+  height: 48px;
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--obrys-pola);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--tusz);
+  cursor: pointer;
+  transition: border-color var(--przejscie), background-color var(--przejscie), opacity var(--przejscie);
+}
+
+.strzalka:hover:not(:disabled) {
+  border-color: var(--akcent-ciemne);
+  background: rgb(var(--akcent-ciemne-rgb) / 0.08);
+}
+
+.strzalka:disabled {
+  opacity: 0.32;
+  cursor: default;
+}
+
+.naglowkiDni,
+.siatka {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 5px;
+}
+
+.naglowkiDni {
+  margin-bottom: 6px;
+}
+
+.naglowekDnia {
+  text-align: center;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--tusz-2);
+  padding: 4px 0;
+}
+
+.dzien {
+  aspect-ratio: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  background: var(--krem);
+  color: var(--tusz);
+  font-size: 0.96rem;
+  font-variant-numeric: tabular-nums;
+  cursor: pointer;
+  transition: background-color var(--przejscie), border-color var(--przejscie), color var(--przejscie);
+}
+
+.dzien:hover:not(:disabled) {
+  border-color: var(--akcent-ciemne);
+}
+
+.dzien:disabled {
+  background: transparent;
+  color: rgb(var(--tusz-2-rgb) / 0.38);
+  cursor: default;
+}
+
+.dzisiaj {
+  border-color: var(--akcent-ciemne);
+  font-weight: 600;
+}
+
+.wybrany,
+.wybrany:hover {
+  background-image: linear-gradient(180deg, var(--akcent-jasne) 0%, var(--akcent) 58%, var(--akcent) 100%);
+  border-color: transparent;
+  color: var(--atrament);
+  font-weight: 600;
+}
+
+.pusty {
+  visibility: hidden;
+}
+
+.tytulKolumny {
+  margin: 0 0 12px;
+  font-family: var(--kroj-ryte);
+  font-size: 0.74rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--akcent-tekst);
+}
+
+.dataKolumny {
+  margin: 0 0 14px;
+  font-family: var(--kroj-naglowek);
+  font-size: 1.1rem;
+  color: var(--tusz);
+}
+
+.podpowiedz {
+  margin: 0;
+  color: var(--tusz-2);
+  font-size: 0.95rem;
+}
+
+.godziny {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(84px, 1fr));
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.godzina {
+  width: 100%;
+  min-height: 48px;
+  padding: 10px 6px;
+  border: 1px solid var(--obrys-pola);
+  border-radius: 2px;
+  background: var(--biel);
+  color: var(--tusz);
+  font-variant-numeric: tabular-nums;
+  cursor: pointer;
+  transition: border-color var(--przejscie), background-color var(--przejscie), color var(--przejscie);
+}
+
+.godzina:hover:not(:disabled) {
+  border-color: var(--akcent-ciemne);
+  background: rgb(var(--akcent-ciemne-rgb) / 0.07);
+}
+
+.godzina:disabled {
+  color: rgb(var(--tusz-2-rgb) / 0.4);
+  background: transparent;
+  cursor: default;
+  text-decoration: line-through;
+}
+
+.godzinaWybrana,
+.godzinaWybrana:hover {
+  background-image: linear-gradient(180deg, var(--akcent-jasne) 0%, var(--akcent) 58%, var(--akcent) 100%);
+  border-color: transparent;
+  color: var(--atrament);
+  font-weight: 600;
+}
+
+.formularz {
+  margin-top: clamp(20px, 2.4vw, 30px);
+  padding-top: clamp(20px, 2.4vw, 30px);
+  border-top: 1px solid var(--krem-2);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.wybraneTermin {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 8px 14px;
+  margin: 0;
+  padding: 13px 16px;
+  background: var(--krem);
+  border-left: 3px solid var(--akcent-ciemne);
+  font-size: 0.98rem;
+}
+
+.etykietaTerminu {
+  font-family: var(--kroj-ryte);
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--akcent-tekst);
+}
+
+.zmien {
+  margin-left: auto;
+  background: none;
+  border: 0;
+  padding: 0;
+  color: var(--tusz);
+  font-size: 0.9rem;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  cursor: pointer;
+}
+
+.pola {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 15px;
+}
+
+.pole {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.etykieta {
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
+.wejscie,
+.wybor {
+  width: 100%;
+  min-height: 52px;
+  padding: 13px 15px;
+  border: 1px solid var(--obrys-pola);
+  border-radius: 2px;
+  background: var(--biel);
+  color: var(--tusz);
+  font-size: 1rem;
+}
+
+.wejscie:focus-visible,
+.wybor:focus-visible {
+  border-color: var(--akcent-ciemne);
+}
+
+.zgoda {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--tusz-2);
+}
+
+.komunikat {
+  margin: 0;
+  padding: 13px 15px;
+  font-size: 0.95rem;
+  border-left: 3px solid var(--blad);
+  background: rgb(var(--blad-rgb) / 0.08);
+}
+
+.pulapka {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.potwierdzenie {
+  text-align: center;
+  padding: clamp(28px, 4vw, 52px) clamp(16px, 2.4vw, 32px);
+}
+
+.znak {
+  width: 62px;
+  height: 62px;
+  margin: 0 auto 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: var(--krem);
+  color: var(--akcent-tekst);
+}
+
+.potwierdzenieTytul {
+  margin: 0 0 10px;
+  font-family: var(--kroj-naglowek);
+  font-size: clamp(1.3rem, 1.15rem + 0.6vw, 1.6rem);
+}
+
+.potwierdzenieTermin {
+  margin: 0 0 8px;
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.potwierdzenieTresc {
+  margin: 0 auto 22px;
+  max-width: 46ch;
+  color: var(--tusz-2);
+}
+
+.szkielet {
+  min-height: 420px;
+}
+
+@media (max-width: 820px) {
+  .uklad {
+    grid-template-columns: 1fr;
+  }
+}
+
+/*
+  Informacja o zadatku nad kalendarzem. Stoi wyżej niż wybór terminu, bo
+  klientka ma wiedzieć o opłacie zanim zacznie klikać, a nie po podaniu
+  numeru telefonu.
+*/
+.oZadatku {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin: 0 0 14px;
+  padding: 14px 18px;
+  background: var(--ivory);
+  border: 1px solid var(--krem-2);
+  border-left: 3px solid var(--akcent);
+  border-radius: 2px;
+  color: var(--tusz);
+  font-size: 0.98rem;
+}
+
+.znakZadatku {
+  display: inline-flex;
+  flex: none;
+  color: var(--akcent-ciemne);
+  margin-top: 2px;
+}
+
+/* Zgody przy rezerwacji. Kwadraty są duże, bo klikają w nie także osoby,
+   które nie trafiają palcem w dwunastopikselowy znacznik. */
+.zgody {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 4px 0 18px;
+}
+
+.zgodaPole {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 0.94rem;
+  color: var(--tusz-2);
+  line-height: 1.5;
+  cursor: pointer;
+}
+
+.zgodaPole input {
+  flex: none;
+  width: 22px;
+  height: 22px;
+  min-height: 22px;
+  margin: 1px 0 0;
+  accent-color: var(--akcent-ciemne);
+  cursor: pointer;
+}
+
+.zgodaPole a {
+  color: var(--akcent-tekst);
+  text-underline-offset: 3px;
+}

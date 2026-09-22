@@ -1,0 +1,258 @@
+{
+  "uwaga": "Wszystkie teksty widoczne na stronie. Zmiana tutaj wystarczy, komponenty nie mają wpisanych treści na sztywno. Zasady, których trzyma się ta strona: zwracamy się do klientki na Ty z wielkiej litery, gabinet mówi w liczbie mnogiej, zero myślników i półpauz, zero słów wydmuszek, zero obietnic leczenia i zero gwarancji efektu. Przyciski mówią, co się stanie po kliknięciu.",
+  "meta": {
+    "tytul": "Kosmetolog Chełmża | Glamorous Beauty Studio Daria Bojarska",
+    "opis": "Gabinet kosmetologii estetycznej w Chełmży. Zabiegi na twarz i ciało dobierane do Twojej skóry: przebarwienia, odmładzanie, endermologia, drenaż.",
+    "slowa": "kosmetolog Chełmża, gabinet kosmetyczny Chełmża, zabiegi na twarz Chełmża, endermologia Chełmża, drenaż limfatyczny Chełmża, laminacja brwi Chełmża, lifting rzęs Chełmża, radiofrekwencja mikroigłowa, oczyszczanie wodorowe, Geneo, kosmetolog okolice Torunia",
+    "tytulKrotki": "Kosmetolog Chełmża | Glamorous Beauty Studio"
+  },
+  "hero": {
+    "nadtytul": "Gabinet kosmetologii w Chełmży",
+    "naglowekPierwszaLinia": "Skóra, w której dobrze się czujesz",
+    "naglowekDrugaLinia": "Piękno zaczyna się od Ciebie",
+    "akapit": "Zabiegi na twarz i ciało dobieramy do Twojej skóry, nie do mody. Najpierw sprawdzamy, czego potrzebuje, potem planujemy pielęgnację krok po kroku. Bez pośpiechu i bez przypadkowych zabiegów.",
+    "przyciskGlowny": "Umów wizytę",
+    "przyciskDrugi": "Zobacz zabiegi",
+    "altZdjecia": "Kobieta podczas zabiegu pielęgnacyjnego w gabinecie kosmetologii",
+    "zaufanie": [
+      "5,0 w Google",
+      "30 opinii",
+      "Indywidualny dobór zabiegów",
+      "Chełmża, ul. Broniewskiego 28"
+    ]
+  },
+  "korzysci": {
+    "naglowek": "Dlaczego klientki wracają",
+    "pozycje": [
+      {
+        "ikona": "doradztwo",
+        "tytul": "Dobór do Twojej skóry",
+        "tekst": "Zanim zaproponujemy zabieg, oglądamy skórę i pytamy o Twoje potrzeby."
+      },
+      {
+        "ikona": "skora",
+        "tytul": "Nowoczesne zabiegi",
+        "tekst": "Pracujemy na sprawdzonych urządzeniach i profesjonalnych peelingach."
+      },
+      {
+        "ikona": "sylwetka",
+        "tytul": "Twarz i ciało w jednym miejscu",
+        "tekst": "Od oczyszczania, przez odmładzanie, po modelowanie sylwetki i drenaż."
+      },
+      {
+        "ikona": "lotos",
+        "tytul": "Czas tylko dla Ciebie",
+        "tekst": "Kameralny gabinet, jedna klientka na raz, spokojna atmosfera."
+      }
+    ]
+  },
+  "oferta": {
+    "nadtytul": "Oferta",
+    "naglowek": "Co dla Ciebie robimy",
+    "wstep": "Sześć obszarów, w których pracujemy. Przesuń palcem albo strzałkami, żeby zobaczyć wszystkie.",
+    "etykietaDlaKogo": "Dla kogo",
+    "przyciskKarty": "Umów ten zabieg",
+    "przyciskPodstrony": "Zobacz, co wchodzi w skład",
+    "poprzednia": "Poprzedni filar oferty",
+    "nastepna": "Następny filar oferty",
+    "dopisek": "Nie wiesz, który zabieg wybrać? Zacznij od konsultacji, resztę dobierzemy razem.",
+    "przyciskDopisku": "Umów konsultację"
+  },
+  "opinie": {
+    "nadtytul": "Opinie",
+    "naglowek": "5,0 w Google. 30 opinii, wszystkie na pięć gwiazdek",
+    "wstep": "Klientki najczęściej piszą o indywidualnym podejściu, widocznych efektach i miłej atmosferze.",
+    "link": "Zobacz wszystkie opinie w Google",
+    "pauza": "Najedź kursorem albo dotknij, żeby zatrzymać przesuwanie."
+  },
+  "portfolio": {
+    "nadtytul": "Efekty",
+    "naglowek": "Efekty naszych klientek",
+    "wstep": "Prawdziwe zdjęcia z gabinetu, bez filtrów i retuszu. Każda skóra reaguje inaczej, dlatego efekt zawsze omawiamy przed zabiegiem. Kliknij, żeby powiększyć.",
+    "zamknij": "Zamknij powiększenie",
+    "poprzednie": "Poprzednie zdjęcie",
+    "nastepne": "Następne zdjęcie",
+    "altOgolny": "Efekt zabiegu w Glamorous Beauty Studio, zdjęcie {nr} z {razem}"
+  },
+  "oNas": {
+    "nadtytul": "O nas",
+    "naglowek": "Poznaj Darię",
+    "akapity": [
+      "Glamorous Beauty Studio prowadzi Daria Bojarska. Specjalizuje się w pielęgnacji skóry i modelowaniu sylwetki.",
+      "Każdy zabieg zaczyna od rozmowy i obejrzenia skóry, bo ten sam problem u dwóch kobiet może potrzebować zupełnie innego podejścia.",
+      "W gabinecie nie ma pośpiechu ani taśmy. Jest czas na pytania, na spokojny zabieg i na plan, który pasuje do Twojego życia."
+    ],
+    "todo": "{TODO: doświadczenie, szkolenia i certyfikaty od Pani Darii. Ten akapit warto napisać razem z nią i dać jej przeczytać na głos.}",
+    "podpis": "Daria Bojarska",
+    "przycisk": "Umów wizytę",
+    "altZdjecia": "Daria Bojarska, właścicielka Glamorous Beauty Studio"
+  },
+  "proces": {
+    "nadtytul": "Jak to wygląda",
+    "naglowek": "Jak wygląda wizyta",
+    "wstep": "Cztery kroki, żadnych niespodzianek po drodze.",
+    "kroki": [
+      {
+        "ikona": "kalendarz",
+        "tytul": "Wybierasz termin",
+        "tekst": "Rezerwujesz online o dowolnej porze, także wieczorem."
+      },
+      {
+        "ikona": "zadatek",
+        "tytul": "Wpłacasz zadatek 50 zł",
+        "tekst": "To potwierdzenie Twojej rezerwacji. Kwota jest odliczana od ceny zabiegu."
+      },
+      {
+        "ikona": "dlon",
+        "tytul": "Rozmawiamy i oglądamy skórę",
+        "tekst": "Dopasowujemy zabieg do tego, czego Twoja skóra potrzebuje dziś."
+      },
+      {
+        "ikona": "lotos",
+        "tytul": "Zabieg i plan na dalej",
+        "tekst": "Wychodzisz z efektem i wiesz, jak dbać o skórę w domu."
+      }
+    ]
+  },
+  "cennik": {
+    "nadtytul": "Cennik",
+    "naglowek": "Ile to kosztuje",
+    "wstep": "Kliknij kategorię, żeby zobaczyć ceny.",
+    "brakCeny": "Cenę ustalamy na konsultacji",
+    "przycisk": "Umów wizytę"
+  },
+  "kontakt": {
+    "nadtytul": "Rezerwacja",
+    "naglowek": "Umów wizytę",
+    "wstep": "Wybierz dzień i godzinę, która Ci pasuje. Rezerwację potwierdza zadatek 50 zł, który odliczymy od ceny zabiegu.",
+    "naglowekFormularza": "Wolisz najpierw zapytać?",
+    "wstepFormularza": "Napisz, a odezwiemy się, jak tylko skończymy zabieg.",
+    "poleImie": "Imię",
+    "poleTelefon": "Telefon",
+    "poleUsluga": "Zabieg, który Cię interesuje",
+    "poleWiadomosc": "O co chcesz zapytać?",
+    "polePusteUsluga": "Jeszcze nie wiem, poradźcie mi",
+    "przyciskFormularza": "Wyślij pytanie",
+    "przyciskWysylanie": "Wysyłamy",
+    "potwierdzenie": "Dziękujemy, mamy Twoje pytanie. Odezwiemy się najszybciej, jak damy radę.",
+    "blad": "Nie udało się wysłać. Zadzwoń proszę pod numer podany obok, wtedy na pewno się dogadamy.",
+    "zgoda": "Wysyłając wiadomość, zgadzasz się na przetwarzanie podanych danych w celu odpowiedzi na Twoje pytanie.",
+    "politykaLink": "Polityka prywatności",
+    "regulaminLink": "Regulamin rezerwacji",
+    "godzinyBrak": "Godziny otwarcia ustalamy indywidualnie. Zadzwoń albo zarezerwuj termin w kalendarzu.",
+    "nawigacja": "Wyznacz trasę",
+    "godzinyTytul": "Godziny otwarcia",
+    "zamkniete": "zamknięte"
+  },
+  "faq": {
+    "nadtytul": "Pytania",
+    "naglowek": "Pytania, które słyszymy najczęściej"
+  },
+  "ctaKoncowe": {
+    "naglowek": "Zarezerwuj czas dla siebie",
+    "tekst": "Wybierz termin online. Po rezerwacji wpłacasz 50 zł zadatku, który odliczymy od ceny zabiegu.",
+    "przycisk": "Umów wizytę",
+    "telefonWstep": "Wolisz zadzwonić?"
+  },
+  "stopka": {
+    "opis": "Gabinet kosmetologii estetycznej w Chełmży. Zabiegi na twarz i ciało dobierane indywidualnie.",
+    "godziny": "Godziny otwarcia",
+    "kontakt": "Kontakt",
+    "obserwuj": "Obserwuj",
+    "dokumenty": "Dokumenty",
+    "prawa": "Wszystkie prawa zastrzeżone.",
+    "ciasteczka": "Strona używa plików cookie wyłącznie do poprawnego działania rezerwacji."
+  },
+  "nawigacja": {
+    "pozycje": [
+      {
+        "etykieta": "Oferta",
+        "cel": "/#oferta"
+      },
+      {
+        "etykieta": "Efekty",
+        "cel": "/#portfolio"
+      },
+      {
+        "etykieta": "O nas",
+        "cel": "/#o-nas"
+      },
+      {
+        "etykieta": "Cennik",
+        "cel": "/#cennik"
+      },
+      {
+        "etykieta": "Opinie",
+        "cel": "/#opinie"
+      },
+      {
+        "etykieta": "Kontakt",
+        "cel": "/#kontakt"
+      }
+    ],
+    "przycisk": "Umów wizytę",
+    "menuOtworz": "Otwórz menu",
+    "menuZamknij": "Zamknij menu",
+    "pasekMobilnyZadzwon": "Zadzwoń"
+  },
+  "kalendarz": {
+    "naglowek": "Wybierz termin",
+    "podglad": "Kalendarz podglądowy. Terminy są przykładowe, a Twoje zgłoszenie trafia do nas jako prośba o wizytę, którą potwierdzamy telefonicznie. To zdanie znika po podpięciu kalendarza GoHighLevel.",
+    "oZadatku": "Rezerwację potwierdza zadatek 50 zł, który odliczymy od ceny zabiegu.",
+    "poprzedniMiesiac": "Poprzedni miesiąc",
+    "nastepnyMiesiac": "Następny miesiąc",
+    "wybierzDzien": "Kliknij dzień w kalendarzu, żeby zobaczyć wolne godziny.",
+    "wolneGodziny": "Wolne godziny",
+    "brakGodzin": "W tym dniu nie przyjmujemy. Wybierz proszę inny termin.",
+    "zajete": "termin zajęty",
+    "wybranyTermin": "Wybrany termin",
+    "zmienTermin": "Zmień termin",
+    "przyciskRezerwuj": "Przejdź do zadatku",
+    "przyciskWysylanie": "Rezerwujemy",
+    "blad": "Nie udało się wysłać zgłoszenia. Zadzwoń proszę pod numer obok, wtedy na pewno się umówimy.",
+    "dzisiaj": "dzisiaj",
+    "zgodaRegulamin": "Akceptuję regulamin rezerwacji i zasady zadatku.",
+    "zgodaDane": "Zgadzam się na przetwarzanie moich danych w celu obsługi rezerwacji.",
+    "zgodaMarketing": "Chcę dostawać wiadomości o wolnych terminach i promocjach. To zgoda dobrowolna.",
+    "krokiEtykieta": "Postęp rezerwacji",
+    "kroki": [
+      "Usługa i termin",
+      "Zadatek",
+      "Gotowe"
+    ]
+  },
+  "zadatek": {
+    "tytulStrony": "Zadatek 50 zł | Glamorous Beauty Studio",
+    "nadtytul": "Krok 2 z 2",
+    "naglowek": "Potwierdź rezerwację zadatkiem",
+    "wstep": "Termin jest dla Ciebie wstępnie zablokowany. Zadatek 50 zł potwierdza rezerwację i odliczamy go od ceny zabiegu.",
+    "podsumowanieTytul": "Twoja rezerwacja",
+    "etykietaUsluga": "Zabieg",
+    "etykietaTermin": "Termin",
+    "etykietaKwota": "Do zapłaty teraz",
+    "etykietaImie": "Rezerwacja na",
+    "przycisk": "Zapłać 50 zł",
+    "metody": "Zapłacisz BLIK-iem, kartą albo szybkim przelewem.",
+    "bezpieczenstwo": "Płatność prowadzi operator płatności. Nie przechowujemy danych Twojej karty.",
+    "regulamin": "Zasady zadatku opisuje regulamin rezerwacji.",
+    "pomoc": "Coś nie działa? Zadzwoń, umówimy Cię ręcznie.",
+    "brakDanych": "Nie widzimy Twojej rezerwacji. Wróć proszę do kalendarza i wybierz termin jeszcze raz.",
+    "powrot": "Wróć do kalendarza",
+    "brakLinku": "{TODO: link płatności nie jest jeszcze podpięty. Ustaw NEXT_PUBLIC_LINK_PLATNOSCI_ZADATEK, żeby przycisk zaczął działać.}"
+  },
+  "potwierdzenie": {
+    "tytulStrony": "Rezerwacja potwierdzona | Glamorous Beauty Studio",
+    "nadtytul": "Gotowe",
+    "naglowek": "Termin jest Twój",
+    "wstep": "Zadatek dotarł, rezerwacja jest potwierdzona. Wyślemy Ci jeszcze SMS z przypomnieniem dzień przed wizytą.",
+    "kalendarzPrzycisk": "Dodaj do kalendarza",
+    "mapaPrzycisk": "Zobacz dojazd",
+    "przygotowanieTytul": "Zanim przyjdziesz",
+    "przygotowanie": [
+      "Przyjdź bez makijażu, jeśli zabieg dotyczy twarzy.",
+      "Weź listę leków i preparatów, których używasz na stałe.",
+      "Jeśli coś Cię niepokoi, napisz albo zadzwoń przed wizytą."
+    ],
+    "powrot": "Wróć na stronę główną"
+  }
+}

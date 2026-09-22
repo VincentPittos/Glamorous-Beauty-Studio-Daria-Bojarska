@@ -1,0 +1,42 @@
+/*
+  Pasek rezerwacji przyklejony do dołu ekranu telefonu. Dzięki niemu przycisk
+  umówienia wizyty jest widoczny przez cały czas czytania strony, niezależnie
+  od tego, jak daleko klientka przewinęła.
+*/
+.pasek {
+  display: none;
+}
+
+@media (max-width: 860px) {
+  .pasek {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 98;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 10px;
+    align-items: center;
+    height: var(--pasek-mobilny-h);
+    padding: 0 12px;
+    background: rgb(var(--atrament-rgb) / 0.96);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgb(var(--akcent-rgb) / 0.4);
+    /* Zapas na pasek gestów w telefonach z zaokrąglonym ekranem. */
+    padding-bottom: env(safe-area-inset-bottom);
+    height: calc(var(--pasek-mobilny-h) + env(safe-area-inset-bottom));
+  }
+}
+
+.rezerwacja {
+  min-height: 48px;
+  padding: 12px 20px;
+  font-size: 1rem;
+}
+
+.telefon {
+  min-height: 48px;
+  width: 56px;
+  padding: 0;
+}

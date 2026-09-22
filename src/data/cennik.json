@@ -1,0 +1,166 @@
+{
+  "DO_ZMIANY": "WSZYSTKIE CENY SĄ DO UZUPEŁNIENIA. Nie wpisuj tu kwot z głowy. Poproś Panią Darię o cennik i przepisz go dosłownie, razem z widełkami. Dopóki w pliku stoją znaczniki TODO, sekcja cennika pokazuje zamiast kwot zdanie o ustalaniu ceny na konsultacji.",
+  "uwaga": "Ceny wpisuj jako tekst razem ze złotówkami, bo część pozycji ma widełki albo dwie wartości. Kolejność kategorii jest taka jak kolejność filarów w uslugi.json. Pole dopisek wyświetla się nad listą cen, użyj go tam, gdzie cena od czegoś zależy.",
+  "kategorie": [
+    {
+      "id": "zdrowa-skora",
+      "nazwa": "Zdrowa i zadbana skóra",
+      "ikona": "skora",
+      "dopisek": null,
+      "pozycje": [
+        {
+          "nazwa": "GENEO",
+          "cena": "{TODO: cena}"
+        },
+        {
+          "nazwa": "Oczyszczanie wodorowe",
+          "cena": "{TODO: cena}"
+        },
+        {
+          "nazwa": "Karboksyterapia bezigłowa",
+          "cena": "{TODO: cena}"
+        },
+        {
+          "nazwa": "CO₂ Carboxy Combo",
+          "cena": "{TODO: cena}"
+        },
+        {
+          "nazwa": "Fotonoterapia",
+          "cena": "{TODO: cena}"
+        },
+        {
+          "nazwa": "Pumpkin Peel",
+          "cena": "{TODO: cena}"
+        }
+      ]
+    },
+    {
+      "id": "problemy-skorne",
+      "nazwa": "Rozwiązywanie problemów skórnych",
+      "ikona": "problemy",
+      "dopisek": "Terapie na przebarwienia wyceniamy po konsultacji, bo cena zależy od preparatu i liczby zabiegów w serii.",
+      "pozycje": [
+        {
+          "nazwa": "Azel Peel",
+          "cena": "{TODO: cena}"
+        },
+        {
+          "nazwa": "Pumpkin Glico Peel",
+          "cena": "{TODO: cena}"
+        },
+        {
+          "nazwa": "Dermamelan",
+          "cena": "{TODO: cena}"
+        },
+        {
+          "nazwa": "Cosmelan",
+          "cena": "{TODO: cena}"
+        },
+        {
+          "nazwa": "Toning Peel Cell Fusion C",
+          "cena": "{TODO: cena}"
+        },
+        {
+          "nazwa": "Rejuve Melano ILI-Peel",
+          "cena": "{TODO: cena}"
+        },
+        {
+          "nazwa": "Coloderm Pro-Age Treatment",
+          "cena": "{TODO: cena}"
+        },
+        {
+          "nazwa": "Elektrokoagulacja, usuwanie włókniaków",
+          "cena": "{TODO: cena}"
+        }
+      ]
+    },
+    {
+      "id": "odmladzanie",
+      "nazwa": "Odmładzanie i regeneracja",
+      "ikona": "odmladzanie",
+      "dopisek": null,
+      "pozycje": [
+        {
+          "nazwa": "Radiofrekwencja mikroigłowa",
+          "cena": "{TODO: cena}"
+        },
+        {
+          "nazwa": "Mikronakłuwanie",
+          "cena": "{TODO: cena}"
+        },
+        {
+          "nazwa": "Lift Peel",
+          "cena": "{TODO: cena}"
+        },
+        {
+          "nazwa": "Lift Glow ILI-Peel",
+          "cena": "{TODO: cena}"
+        },
+        {
+          "nazwa": "Mikrolifting i dermomasaż twarzy",
+          "cena": "{TODO: cena}"
+        }
+      ]
+    },
+    {
+      "id": "sylwetka",
+      "nazwa": "Modelowanie sylwetki i drenaż limfatyczny",
+      "ikona": "sylwetka",
+      "dopisek": "Zabiegi na ciało najlepiej działają w serii. Cenę pojedynczej wizyty i cenę pakietu ustalamy na konsultacji.",
+      "pozycje": [
+        {
+          "nazwa": "Endermologia, pojedynczy zabieg",
+          "cena": "{TODO: cena}"
+        },
+        {
+          "nazwa": "Endermologia, pakiet",
+          "cena": "{TODO: cena}"
+        },
+        {
+          "nazwa": "Drenaż limfatyczny, pojedynczy zabieg",
+          "cena": "{TODO: cena}"
+        },
+        {
+          "nazwa": "Drenaż limfatyczny, pakiet",
+          "cena": "{TODO: cena}"
+        }
+      ]
+    },
+    {
+      "id": "oprawa-oka",
+      "nazwa": "Naturalna oprawa oka",
+      "ikona": "oko",
+      "dopisek": null,
+      "pozycje": [
+        {
+          "nazwa": "Laminacja brwi",
+          "cena": "{TODO: cena}"
+        },
+        {
+          "nazwa": "Laminacja rzęs",
+          "cena": "{TODO: cena}"
+        },
+        {
+          "nazwa": "Lifting rzęs",
+          "cena": "{TODO: cena}"
+        },
+        {
+          "nazwa": "Koreański lifting rzęs",
+          "cena": "{TODO: cena}"
+        }
+      ]
+    },
+    {
+      "id": "doradztwo",
+      "nazwa": "Indywidualne doradztwo zabiegowe",
+      "ikona": "doradztwo",
+      "dopisek": null,
+      "pozycje": [
+        {
+          "nazwa": "Konsultacja i dobór zabiegów",
+          "cena": "{TODO: cena}"
+        }
+      ]
+    }
+  ]
+}

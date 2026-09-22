@@ -1,0 +1,167 @@
+.uklad {
+  max-width: 620px;
+  margin: 0 auto;
+}
+
+.naglowek {
+  font-family: var(--kroj-naglowek);
+  font-size: clamp(1.9rem, 1.4rem + 2.2vw, 2.9rem);
+  font-weight: 400;
+  line-height: 1.15;
+  margin: 0;
+  color: var(--tusz);
+}
+
+.wstep {
+  color: var(--tusz-2);
+  margin: 14px 0 clamp(24px, 3vw, 32px);
+}
+
+/* Miejsce na podsumowanie, zanim przeglądarka odczyta je z sessionStorage.
+   Bez niego strona podskakuje po jednej klatce. */
+.szkielet {
+  height: 268px;
+  border-radius: 2px;
+  background: var(--ivory);
+  border: 1px solid var(--krem-2);
+}
+
+.brak {
+  padding: clamp(22px, 3vw, 30px);
+  background: var(--ivory);
+  border: 1px solid var(--krem-2);
+  border-radius: 2px;
+}
+
+.brak p {
+  color: var(--tusz-2);
+}
+
+.podsumowanie {
+  padding: clamp(22px, 3vw, 30px);
+  background: var(--biel);
+  border: 1px solid var(--krem-2);
+  border-top: 3px solid var(--akcent);
+  border-radius: 2px;
+}
+
+.tytulPodsumowania {
+  font-family: var(--kroj-ryte);
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--akcent-tekst);
+  margin: 0 0 18px;
+}
+
+.dane {
+  display: grid;
+  grid-template-columns: minmax(120px, auto) 1fr;
+  gap: 12px 22px;
+  margin: 0;
+}
+
+.dane dt {
+  color: var(--tusz-2);
+  font-size: 0.92rem;
+}
+
+.dane dd {
+  margin: 0;
+  color: var(--tusz);
+  font-weight: 500;
+}
+
+.kwota {
+  font-family: var(--kroj-naglowek);
+  font-size: 1.4rem;
+  font-variant-numeric: tabular-nums;
+}
+
+/*
+  Przycisk płatności jest zwykłym odnośnikiem, bo prowadzi poza stronę,
+  do operatora. Wygląda jak główny przycisk marki i jest jedynym wezwaniem
+  na tym ekranie.
+*/
+.zaplac {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 56px;
+  margin-top: clamp(22px, 2.6vw, 28px);
+  padding: 14px 32px;
+  background: var(--atrament);
+  color: var(--biel);
+  border: 1px solid transparent;
+  border-radius: 2px;
+  font-family: var(--kroj-naglowek);
+  font-size: 1.12rem;
+  text-decoration: none;
+  transition: background-color var(--przejscie), border-color var(--przejscie);
+}
+
+.zaplac:hover {
+  background: var(--atrament-3);
+  border-color: var(--akcent);
+}
+
+.brakLinku {
+  margin-top: clamp(22px, 2.6vw, 28px);
+  padding: 16px 18px;
+  background: rgb(var(--blad-rgb) / 0.08);
+  border-left: 3px solid var(--blad);
+  color: var(--tusz);
+  font-size: 0.95rem;
+}
+
+.metody {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 16px 0 0;
+  color: var(--tusz-2);
+  font-size: 0.95rem;
+}
+
+.zapewnienia {
+  list-style: none;
+  margin: clamp(22px, 2.6vw, 28px) 0 0;
+  padding: clamp(18px, 2.2vw, 22px) 0 0;
+  border-top: 1px solid var(--krem-2);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  color: var(--tusz-2);
+  font-size: 0.92rem;
+}
+
+.zapewnienia li {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+}
+
+.zapewnienia svg {
+  flex: none;
+  margin-top: 2px;
+  color: var(--akcent-ciemne);
+}
+
+.zapewnienia a {
+  color: var(--akcent-tekst);
+  text-underline-offset: 3px;
+  white-space: nowrap;
+}
+
+@media (max-width: 520px) {
+  .dane {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+
+  .dane dd {
+    margin-bottom: 12px;
+  }
+}

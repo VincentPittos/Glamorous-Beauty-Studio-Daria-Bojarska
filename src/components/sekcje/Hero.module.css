@@ -1,0 +1,235 @@
+.hero {
+  position: relative;
+  overflow: hidden;
+  background: var(--atrament);
+  min-height: min(760px, calc(100svh - var(--naglowek-h)));
+  display: flex;
+  align-items: center;
+  padding: clamp(32px, 3.6vw, 56px) 0;
+}
+
+/* Ciepła poświata z makiety, zrobiona gradientem zamiast zdjęcia tła. */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(52% 60% at 18% 44%, rgb(var(--akcent-rgb) / 0.16) 0%, transparent 70%),
+    radial-gradient(38% 46% at 46% 78%, rgb(var(--akcent-rgb) / 0.1) 0%, transparent 72%);
+  pointer-events: none;
+}
+
+.zdjecie {
+  position: absolute;
+  inset: 0 0 0 auto;
+  height: 100%;
+  /*
+    Proporcje pudelka odpowiadaja proporcjom pliku, wiec zdjecie nie jest
+    ani obcinane, ani powiekszane. Wczesniej przegladarka skalowala je w gore
+    o dziesiec procent i zjadala osiemnascie procent kadru w pionie, przez co
+    wygladalo na przyblizone i miekkie.
+  */
+  width: auto;
+  aspect-ratio: var(--hero-proporcje);
+  max-width: 62%;
+}
+
+.zdjecie img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 62% center;
+}
+
+/*
+  Fotografia wtapia się w ciemne tło, tak jak na makiecie.
+
+  Robią to maski, a nie nakładka w kolorze tła. Nakładka zasłaniała ciepłą
+  poświatę leżącą pod spodem i na styku widać było pionową krawędź.
+
+  Maski są dwie i celowo siedzą na różnych elementach: pudełko wygasza lewą
+  krawędź, a samo zdjęcie górę i dół. Gdyby złożyć je na jednym elemencie,
+  trzeba by sięgnąć po mask-composite, którego starsze przeglądarki z listy
+  wspieranych jeszcze nie znają.
+*/
+.zdjecie {
+  -webkit-mask-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(0, 0, 0, 0.14) 14%,
+    rgba(0, 0, 0, 0.6) 36%,
+    rgba(0, 0, 0, 0.92) 54%,
+    #000 70%
+  );
+  mask-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(0, 0, 0, 0.14) 14%,
+    rgba(0, 0, 0, 0.6) 36%,
+    rgba(0, 0, 0, 0.92) 54%,
+    #000 70%
+  );
+}
+
+.zdjecie img {
+  -webkit-mask-image: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(0, 0, 0, 0.55) 5%,
+    #000 13%,
+    #000 87%,
+    rgba(0, 0, 0, 0.55) 95%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(0, 0, 0, 0.55) 5%,
+    #000 13%,
+    #000 87%,
+    rgba(0, 0, 0, 0.55) 95%,
+    transparent 100%
+  );
+}
+
+.tresc {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+}
+
+.nadtytul {
+  font-size: clamp(0.76rem, 0.7rem + 0.24vw, 0.9rem);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--biel);
+  margin: 0 0 clamp(20px, 2.6vw, 34px);
+  font-weight: 500;
+}
+
+.naglowek {
+  margin: 0 0 clamp(22px, 2.8vw, 34px);
+}
+
+.linia1 {
+  display: block;
+  font-family: var(--kroj-naglowek);
+  font-size: clamp(2.5rem, 1.5rem + 4.4vw, 4.3rem);
+  color: var(--biel);
+  line-height: 1.05;
+}
+
+/* Druga linia jest pisana odręcznie, zgodnie z makietą. Treść, od której
+   zależy decyzja klientki, siedzi w nadtytule i w akapicie poniżej, więc
+   nikt nie traci informacji, jeśli nie rozczyta tego kroju. */
+.linia2 {
+  display: block;
+  font-family: var(--kroj-skrypt);
+  font-size: clamp(2.3rem, 1.2rem + 4.4vw, 4.05rem);
+  line-height: 1.22;
+  color: var(--akcent-jasne);
+  text-shadow: 0 0 34px rgb(var(--akcent-rgb) / 0.38);
+  padding-bottom: 0.12em;
+}
+
+.akapit {
+  font-size: clamp(1.02rem, 0.98rem + 0.2vw, 1.12rem);
+  color: var(--biel);
+  max-width: 44ch;
+  margin-bottom: clamp(28px, 3.4vw, 42px);
+}
+
+.przyciski {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+@media (max-width: 980px) {
+  .hero {
+    /* Zdjęcie wchodzi do normalnego układu, więc oś flexa musi się położyć,
+       inaczej fotografia i tekst stanęłyby obok siebie. */
+    flex-direction: column;
+    align-items: stretch;
+    min-height: 0;
+    padding: 0 0 clamp(28px, 4.5vw, 44px);
+  }
+
+  /* Na telefonie zdjęcie idzie nad tekst. Kładzenie białych liter na twarzy
+     zjada kontrast, a strona ma być czytelna także przy słabszym wzroku. */
+  .zdjecie {
+    position: relative;
+    width: 100%;
+    /* Ograniczenie szerokosci z widoku na pulpicie tutaj nie obowiazuje,
+       inaczej zdjecie skurczyloby sie do dwoch trzecich ekranu telefonu. */
+    /* Szerokosc, nie wysokosc, ogranicza to zdjecie. Limit wysokosci
+       przycinal kadr na tablecie, a mialo byc widac cale ujecie. */
+    max-width: 520px;
+    margin-left: auto;
+    height: auto;
+    aspect-ratio: var(--hero-proporcje);
+    margin-bottom: clamp(28px, 5vw, 40px);
+  }
+
+  .zdjecie img {
+    object-position: 58% 22%;
+  }
+
+  .zdjecie {
+    /* Na pelnej szerokosci nie ma czego wygaszac z boku. */
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+
+  .zdjecie img {
+    -webkit-mask-image: linear-gradient(180deg, #000 62%, transparent 100%);
+    mask-image: linear-gradient(180deg, #000 62%, transparent 100%);
+  }
+
+  .tresc {
+    max-width: none;
+  }
+
+  .akapit {
+    max-width: 52ch;
+  }
+}
+
+/*
+  Pasek zaufania pod przyciskami. Pozycje rozdzielają kropki rysowane
+  obramowaniem, a nie znakiem w treści, żeby czytnik ekranu nie czytał
+  kropek między zdaniami.
+*/
+.zaufanie {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 20px;
+  margin: clamp(26px, 3vw, 36px) 0 0;
+  padding: 0;
+  font-size: 0.92rem;
+  color: var(--mgla);
+}
+
+.zaufanie li {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.zaufanie li + li::before {
+  content: '';
+  position: absolute;
+  left: -11px;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: rgb(var(--akcent-rgb) / 0.7);
+}
+
+.gwiazdka {
+  display: inline-flex;
+  color: var(--akcent-jasne);
+}

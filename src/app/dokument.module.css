@@ -1,0 +1,43 @@
+.strona {
+  padding: clamp(48px, 7vw, 96px) 0;
+  background: var(--krem);
+  color: var(--tusz);
+}
+
+.tresc {
+  max-width: 72ch;
+}
+
+.tresc h2 {
+  font-size: clamp(1.3rem, 1.1rem + 0.9vw, 1.7rem);
+  margin: clamp(32px, 4vw, 48px) 0 14px;
+}
+
+.tresc p,
+.tresc li {
+  color: var(--tusz-2);
+}
+
+.tresc ul {
+  padding-left: 22px;
+  margin: 0 0 1.1em;
+}
+
+.tresc li {
+  margin-bottom: 8px;
+}
+
+.wstecz {
+  display: inline-block;
+  margin-top: 40px;
+  color: var(--tusz);
+}
+
+.uwaga {
+  border-left: 3px solid var(--akcent-ciemne);
+  background: rgb(var(--akcent-ciemne-rgb) / 0.09);
+  padding: 14px 18px;
+  margin: 24px 0;
+  color: var(--tusz);
+  font-size: 0.95rem;
+}

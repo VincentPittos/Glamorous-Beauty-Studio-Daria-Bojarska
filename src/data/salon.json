@@ -1,0 +1,59 @@
+{
+  "DO_ZMIANY": "Pola oznaczone TODO czekają na dane od Pani Darii. Lista braków siedzi w RAPORT.md w korzeniu projektu.",
+  "nazwa": "Glamorous Beauty Studio Daria Bojarska",
+  "nazwaKrotka": "Glamorous Beauty Studio",
+  "opisKrotki": "Gabinet kosmetologii estetycznej w Chełmży.",
+  "haslo": "Piękno zaczyna się od Ciebie",
+  "wlascicielka": "Daria Bojarska",
+  "logotyp": {
+    "nazwa": "GLAMOROUS",
+    "podpis": "BEAUTY STUDIO",
+    "uwaga": "Logotyp składa się z tekstu i sygnetu rysowanego kreską. Po otrzymaniu logo w wektorze podmień komponent src/components/ui/Logo.tsx na obrazek, zostawiając ten sam link i etykietę dla czytników ekranu."
+  },
+  "adres": {
+    "ulica": "ul. Władysława Broniewskiego 28",
+    "kodPocztowy": "87-140",
+    "miasto": "Chełmża",
+    "kraj": "PL"
+  },
+  "geo": {
+    "szerokosc": 53.1856,
+    "dlugosc": 18.6006,
+    "DO_ZMIANY": "TODO: współrzędne są przybliżone, wskazują środek Chełmży. Weź dokładne z wizytówki Google, bo inaczej dane strukturalne pokażą złe miejsce."
+  },
+  "telefon": "+48 782 564 420",
+  "telefonDoWyswietlenia": "782 564 420",
+  "email": "",
+  "nip": "",
+  "instagram": "",
+  "instagramNazwa": "",
+  "facebook": "",
+  "facebookNazwa": "Glamorous Beauty Studio Daria Bojarska",
+  "wizytowkaGoogle": "https://www.google.com/maps/search/?api=1&query=Glamorous+Beauty+Studio+Daria+Bojarska+Che%C5%82m%C5%BCa",
+  "opinieGoogle": "https://www.google.com/maps/search/?api=1&query=Glamorous+Beauty+Studio+Daria+Bojarska+Che%C5%82m%C5%BCa",
+  "nawigacja": "https://www.google.com/maps/dir/?api=1&destination=ul.+W%C5%82adys%C5%82awa+Broniewskiego+28%2C+87-140+Che%C5%82m%C5%BCa",
+  "DO_UZUPELNIENIA": "TODO: e-mail, NIP, adres profilu na Instagramie i Facebooku oraz bezpośredni odnośnik do wizytówki Google. Puste pola nie wyświetlają się na stronie, więc nic się nie psuje, ale stopka jest przez to uboższa.",
+  "ocena": {
+    "srednia": 5,
+    "liczbaOpinii": 30,
+    "zrodlo": "Wizytówka Google, wrzesień 2026",
+    "DO_ZMIANY": "Ocena i liczba opinii muszą zgadzać się z wizytówką Google, bo te same liczby idą do danych strukturalnych. Przed publikacją sprawdź aktualny stan."
+  },
+  "godziny": {
+    "pozycje": [
+      { "dzien": "Poniedziałek", "od": "09:00", "do": "18:00" },
+      { "dzien": "Wtorek", "od": "09:00", "do": "18:00" },
+      { "dzien": "Środa", "od": "09:00", "do": "18:00" },
+      { "dzien": "Czwartek", "od": "09:00", "do": "18:00" },
+      { "dzien": "Piątek", "od": "09:00", "do": "18:00" },
+      { "dzien": "Sobota", "od": "09:00", "do": "14:00" },
+      { "dzien": "Niedziela", "od": "", "do": "" }
+    ],
+    "uwaga": "TODO: GODZINY SĄ ZASTĘPCZE. Puste od i do znaczą dzień zamknięty. Godziny zasilają stopkę, sekcję kontaktu, dane strukturalne oraz wolne terminy w kalendarzu podglądowym, więc błędne godziny widać w czterech miejscach naraz. Uzupełnij je, zanim strona pójdzie na produkcję."
+  },
+  "zadatek": {
+    "kwota": 50,
+    "waluta": "zł",
+    "opis": "Zadatek potwierdza rezerwację i jest odliczany od ceny zabiegu."
+  }
+}

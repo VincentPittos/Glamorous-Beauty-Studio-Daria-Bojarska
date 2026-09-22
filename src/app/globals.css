@@ -1,0 +1,335 @@
+/*
+  Fundament wizualny strony.
+
+  Kolory, kroje pisma i proporcje zdjęcia w sekcji głównej siedzą w marka.css
+  i to jest jedyny plik, który trzeba ruszyć przy nowym salonie. Tutaj zostają
+  ustawienia układu i reguły wspólne dla całej strony.
+
+  Złoto i karmel na kremowym tle służą wyłącznie jako kreska, ikona albo
+  obramowanie. Tekst na kremie jest zawsze czekoladowy albo brązowy, bo
+  złoto nie przechodzi kontrastu WCAG AA.
+*/
+@import './marka.css';
+
+:root {
+  /* Ustawienia układu. Tożsamość salonu siedzi w marka.css. */
+  --naglowek-h: 76px;
+  --pasek-mobilny-h: 68px;
+  --szerokosc: 1180px;
+  --margines: 24px;
+
+  --przejscie: 220ms cubic-bezier(0.2, 0.6, 0.3, 1);
+}
+
+@media (max-width: 860px) {
+  :root {
+    --naglowek-h: 64px;
+    --margines: 20px;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  /* Kotwice mają się zatrzymać pod przyklejonym nagłówkiem. */
+  scroll-padding-top: calc(var(--naglowek-h) + 12px);
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--atrament);
+  color: var(--biel);
+  font-family: var(--kroj-tekst);
+  /* Grupa docelowa to w większości kobiety 40+, więc czytelność ma
+     pierwszeństwo przed efektem: 17 px na telefonie, 18 px wyżej. */
+  font-size: 17px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+@media (min-width: 861px) {
+  body {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 860px) {
+  body {
+    /* Miejsce na przyklejony pasek rezerwacji na dole ekranu. */
+    padding-bottom: var(--pasek-mobilny-h);
+  }
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--kroj-naglowek);
+  font-weight: 400;
+  line-height: 1.15;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+h2 {
+  font-size: clamp(2rem, 1.4rem + 2.4vw, 3.1rem);
+}
+
+h3 {
+  font-size: clamp(1.25rem, 1.1rem + 0.7vw, 1.55rem);
+}
+
+p {
+  margin: 0 0 1.1em;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+a {
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+/*
+  Fokus musi być widoczny na obu tłach, także przy nawigacji klawiaturą.
+
+  Stąd dwa pierścienie zamiast jednego. Samo jasne złoto wypada na kremowym
+  tle 1,44 do 1, czyli obwódka znika dokładnie tam, gdzie stoi większość
+  formularzy. Ciemny pierścień pod spodem trzyma kontrast na jasnych
+  sekcjach, złoty na ciemnych, a razem widać je zawsze.
+*/
+:focus-visible {
+  outline: 2px solid var(--akcent-jasne);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px var(--atrament);
+  border-radius: 2px;
+}
+
+/* Odstepy trzymane krotko, zeby sekcje przechodzily jedna w druga
+   zamiast stac osobno, oddzielone pasami pustki. */
+.sekcja {
+  padding: clamp(40px, 4.4vw, 72px) 0;
+}
+
+.sekcja--ciemna {
+  background: var(--atrament);
+  color: var(--biel);
+}
+
+.sekcja--krem {
+  background: var(--krem);
+  color: var(--tusz);
+}
+
+/* Trzecie tło, o pół tonu jaśniejsze od kremu. Dzięki niemu dwie jasne
+   sekcje z rzędu nie zlewają się w jeden pas. */
+.sekcja--kosc {
+  background: var(--ivory);
+  color: var(--tusz);
+}
+
+.ramka {
+  width: 100%;
+  max-width: var(--szerokosc);
+  margin: 0 auto;
+  padding: 0 var(--margines);
+}
+
+/* Tekst widoczny wyłącznie dla czytników ekranu. */
+.tylko-czytnik {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Link pozwalający pominąć nawigację, widoczny dopiero po sfokusowaniu. */
+.pomin {
+  position: absolute;
+  left: 50%;
+  top: 8px;
+  translate: -50% -200%;
+  z-index: 200;
+  background: var(--akcent);
+  color: var(--atrament);
+  padding: 12px 20px;
+  border-radius: 999px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: translate var(--przejscie);
+}
+
+.pomin:focus-visible {
+  translate: -50% 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/*
+  MEDALION IKONY.
+
+  Wzór z banera marki: ciemny krążek, cienki złoty pierścień, w środku
+  ikona rysowana kreską. Jeden zestaw klas obsługuje oba tła, bo na jasnym
+  tle medalion zostaje ciemny i to on jest kontrastem.
+*/
+.medalion {
+  display: inline-grid;
+  place-items: center;
+  width: 54px;
+  height: 54px;
+  flex: none;
+  border-radius: 50%;
+  background: var(--atrament);
+  border: 1px solid rgb(var(--akcent-jasne-rgb) / 0.75);
+  color: var(--akcent-jasne);
+  box-shadow: inset 0 0 0 4px rgb(var(--akcent-rgb) / 0.14);
+}
+
+.medalion--maly {
+  width: 42px;
+  height: 42px;
+}
+
+.medalion--duzy {
+  width: 66px;
+  height: 66px;
+}
+
+/*
+  ORNAMENT. Złota gałązka z banera, rysowana kreską w narożniku sekcji.
+  Leży pod treścią, jest czysto ozdobna i nigdy nie łapie kursora.
+  Oszczędnie: najwyżej co druga sekcja.
+*/
+.ornament {
+  position: absolute;
+  width: clamp(120px, 14vw, 190px);
+  height: auto;
+  color: var(--akcent);
+  opacity: 0.5;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.ornament--prawy-gorny {
+  top: 8px;
+  right: 10px;
+}
+
+.ornament--lewy-dolny {
+  bottom: 8px;
+  left: 10px;
+  rotate: 180deg;
+}
+
+/* Sekcja z ornamentem musi być układem odniesienia, a jej treść musi
+   leżeć nad gałązką. */
+.sekcja--ozdobna {
+  position: relative;
+  overflow: hidden;
+}
+
+.sekcja--ozdobna > * {
+  position: relative;
+  z-index: 1;
+}
+
+/*
+  LINIA ODRĘCZNA. Wyłącznie krótkie wstawki, nigdy przyciski i nigdy
+  informacja, od której zależy decyzja klientki.
+*/
+.odrecznie {
+  font-family: var(--kroj-skrypt);
+  font-size: clamp(1.6rem, 1.1rem + 2vw, 2.5rem);
+  line-height: 1.35;
+  color: var(--akcent-tekst);
+  font-weight: 400;
+}
+
+.sekcja--ciemna .odrecznie {
+  color: var(--akcent-jasne);
+}
+
+/* Mała etykieta wersalikami nad nagłówkiem sekcji. */
+.nadtytul {
+  font-family: var(--kroj-ryte);
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  margin: 0 0 10px;
+  color: var(--akcent-tekst);
+}
+
+.sekcja--ciemna .nadtytul {
+  color: var(--akcent-jasne);
+}
+
+/*
+  Bardzo subtelna faktura papieru na jasnych sekcjach. Rysowana gradientami,
+  bez pliku graficznego, więc nic nie dokłada się do transferu.
+*/
+.sekcja--krem::before,
+.sekcja--kosc::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.05;
+  background-image:
+    radial-gradient(circle at 20% 30%, var(--c-caramel) 0, transparent 42%),
+    radial-gradient(circle at 78% 68%, var(--c-beige-warm) 0, transparent 38%);
+}
+
+.sekcja--krem,
+.sekcja--kosc {
+  position: relative;
+}
+
+/*
+  Pola formularzy nie schodzą poniżej 48 pikseli wysokości. Przyciski
+  pilnują tego u siebie, w Przycisk.module.css, a kratki kalendarza mają
+  własny wymiar, bo muszą zmieścić siedem kolumn na wąskim ekranie.
+*/
+input:not([type='checkbox']):not([type='radio']),
+select,
+textarea {
+  min-height: 48px;
+}

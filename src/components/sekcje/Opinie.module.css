@@ -1,0 +1,208 @@
+.gora {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: clamp(20px, 2.4vw, 32px);
+}
+
+.ocena {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 16px;
+}
+
+.gwiazdki {
+  display: inline-flex;
+  gap: 3px;
+  color: var(--akcent);
+}
+
+.srednia {
+  font-family: var(--kroj-naglowek);
+  font-size: 1.7rem;
+  color: var(--biel);
+  line-height: 1;
+}
+
+.liczba {
+  color: var(--mgla);
+  font-size: 1rem;
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--kroj-naglowek);
+  font-size: 1.05rem;
+  color: var(--akcent);
+  text-decoration: none;
+  border-bottom: 1px solid rgb(var(--akcent-rgb) / 0.5);
+  padding-bottom: 3px;
+}
+
+.link:hover {
+  border-bottom-color: var(--akcent);
+}
+
+.sciana {
+  position: relative;
+  height: clamp(460px, 62vh, 620px);
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(14px, 1.6vw, 22px);
+  /* Kolumny gasną przy górnej i dolnej krawędzi, żeby ruch nie urywał się ostro. */
+  mask-image: linear-gradient(180deg, transparent 0%, #000 9%, #000 91%, transparent 100%);
+}
+
+.kolumna {
+  overflow: hidden;
+}
+
+.tasma {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  will-change: transform;
+}
+
+.wGore {
+  animation: wGore linear infinite;
+}
+
+.wDol {
+  animation: wDol linear infinite;
+}
+
+/* Taśma zawiera dwa komplety opinii, więc przesunięcie o połowę wysokości
+   wraca do tego samego kadru i pętla nie ma szwu. */
+@keyframes wGore {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-50%);
+  }
+}
+
+@keyframes wDol {
+  from {
+    transform: translateY(-50%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.zatrzymana .tasma {
+  animation-play-state: paused;
+}
+
+.opinia {
+  background: var(--atrament-2);
+  border: 1px solid var(--atrament-3);
+  padding: 22px 22px 24px;
+  /* Odstęp siedzi w marginesie każdej karty, także ostatniej. Dzięki temu
+     przesunięcie taśmy o połowę wysokości trafia dokładnie w ten sam kadr
+     i pętla nie ma widocznego szwu. */
+  margin-bottom: clamp(14px, 1.6vw, 22px);
+}
+
+.tekst {
+  margin: 0 0 16px;
+  color: var(--biel);
+  font-size: 0.98rem;
+  line-height: 1.6;
+}
+
+/* Jasne złoto, z tego samego powodu co podtytuł w ofercie. */
+.autor {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 8px;
+  font-size: 0.88rem;
+  color: var(--akcent-jasne);
+}
+
+.kiedy {
+  color: rgb(var(--biel-rgb) / 0.5);
+}
+
+.stopkaSciany {
+  margin: clamp(14px, 1.8vw, 20px) 0 0;
+  color: rgb(var(--biel-rgb) / 0.58);
+  font-size: 0.88rem;
+  max-width: 78ch;
+}
+
+.pauza {
+  margin: 10px 0 0;
+  /* Jaśniej niż wygląda na pierwszy rzut oka, bo przy 0,45 krycia kontrast
+     spada do okolic 4 do 1 i nie przechodzi normy AA. */
+  color: rgb(var(--biel-rgb) / 0.62);
+  font-size: 0.84rem;
+}
+
+@media (max-width: 900px) {
+  .sciana {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Na wąskim ekranie ściana przestaje jechać i zamienia się w zwykłą listę.
+   Trzy ruchome kolumny na telefonie i tak byłyby nie do przeczytania. */
+@media (max-width: 680px) {
+  .sciana {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    overflow: visible;
+    mask-image: none;
+  }
+
+  .tasma {
+    animation: none;
+  }
+
+  .duplikat {
+    display: none;
+  }
+
+  .pauza {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tasma {
+    animation: none;
+  }
+
+  .sciana {
+    height: auto;
+    overflow: visible;
+    mask-image: none;
+  }
+
+  .duplikat {
+    display: none;
+  }
+
+  .pauza {
+    display: none;
+  }
+}
+
+/* Zdanie pod nagłówkiem opinii. Mgła zamiast pełnej bieli, żeby nie
+   konkurowało z samym nagłówkiem. */
+.wstep {
+  color: var(--mgla);
+  max-width: 54ch;
+  margin: 12px 0 0;
+}

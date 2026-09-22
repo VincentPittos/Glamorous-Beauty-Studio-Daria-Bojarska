@@ -1,0 +1,11 @@
+<!-- Ikona w karcie przegladarki: sygnet z diamentem na ciemnym kwadracie.
+     Kolory odpowiadaja --atrament i --akcent-jasne z marka.css. Po
+     otrzymaniu logo marki w wektorze podmien sciezki diamentu na te
+     z pliku klientki. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <rect width="64" height="64" rx="12" fill="#4a2912"/>
+  <g fill="none" stroke="#e0ba69" stroke-width="2.6" stroke-linejoin="round">
+    <path d="M32 14 50 27 32 50 14 27Z"/>
+    <path d="M14 27h36M24.8 27 32 14l7.2 13M24.8 27 32 50l7.2-23"/>
+  </g>
+</svg>

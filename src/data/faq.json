@@ -1,0 +1,51 @@
+{
+  "DO_ZMIANY": "Odpowiedzi opisują sposób pracy gabinetu, więc musi je potwierdzić Pani Daria. Po potwierdzeniu ustaw doPotwierdzenia na false.",
+  "uwaga": "Nie wpisuj tu parametrów medycznych, czasów gojenia ani obietnic efektu, jeśli nie masz ich od Pani Darii na piśmie. Pytania i odpowiedzi trafiają też do danych strukturalnych FAQPage, więc muszą zgadzać się z tym, co widać na stronie.",
+  "pozycje": [
+    {
+      "pytanie": "Nie wiem, który zabieg wybrać. Co robić?",
+      "odpowiedz": "Wybierz konsultację albo ten zabieg, który najbardziej Cię interesuje. Na miejscu obejrzymy skórę i jeśli coś innego da lepszy efekt, powiemy o tym wprost.",
+      "doPotwierdzenia": false
+    },
+    {
+      "pytanie": "Dlaczego pobieracie zadatek?",
+      "odpowiedz": "Mamy dużo rezerwacji, a każda nieodwołana wizyta to godzina, której nie może wykorzystać inna klientka. Zadatek 50 zł potwierdza termin i jest w całości odliczany od ceny zabiegu.",
+      "doPotwierdzenia": false
+    },
+    {
+      "pytanie": "Co jeśli nie mogę przyjść?",
+      "odpowiedz": "{TODO: zasady odwołania i przeniesienia wizyty do ustalenia z Panią Darią. Propozycja do zatwierdzenia: daj znać najpóźniej 48 godzin przed wizytą, a przeniesiemy zadatek na nowy termin.}",
+      "doPotwierdzenia": true
+    },
+    {
+      "pytanie": "Czy zabiegi bolą?",
+      "odpowiedz": "Większość jest komfortowa. Przy zabiegach mikroigłowych możesz poczuć lekkie kłucie. Zawsze mówimy wcześniej, czego się spodziewać, i pytamy o Twój komfort w trakcie.",
+      "doPotwierdzenia": true
+    },
+    {
+      "pytanie": "Mam wrażliwą albo naczynkową skórę. Czy mogę skorzystać?",
+      "odpowiedz": "Tak, mamy zabiegi przygotowane z myślą o takiej skórze. Przy AZS, łuszczycy czy trądziku różowatym działamy jako uzupełnienie opieki dermatologa, a nie zamiast niej.",
+      "doPotwierdzenia": true
+    },
+    {
+      "pytanie": "Kiedy zobaczę efekt?",
+      "odpowiedz": "Po zabiegach oczyszczających i nawilżających zwykle od razu. Przy terapiach przebarwień, radiofrekwencji, endermologii i drenażu efekt buduje się przez kilka tygodni i serię zabiegów. Każda skóra reaguje inaczej, dlatego mówimy o tym na wizycie.",
+      "doPotwierdzenia": true
+    },
+    {
+      "pytanie": "Jak się przygotować do wizyty?",
+      "odpowiedz": "{TODO: ogólne zalecenia od Pani Darii, na przykład co odstawić przed peelingami i terapiami przebarwień.} Jeśli bierzesz leki na stałe albo coś Cię niepokoi, napisz o tym przed wizytą.",
+      "doPotwierdzenia": true
+    },
+    {
+      "pytanie": "Jak umówić wizytę?",
+      "odpowiedz": "Wybierz dzień i godzinę w kalendarzu na tej stronie, a potem wpłać zadatek 50 zł. Dopiero on potwierdza termin. Jeśli wolisz najpierw o coś zapytać, napisz przez formularz albo zadzwoń.",
+      "doPotwierdzenia": false
+    },
+    {
+      "pytanie": "Przyjmujecie klientki spoza Chełmży?",
+      "odpowiedz": "Tak. Przyjeżdżają do nas kobiety z Torunia, Kowalewa Pomorskiego, Łysomic, Papowa Biskupiego i Chełmna. Adres i odnośnik do nawigacji znajdziesz w sekcji kontaktu.",
+      "doPotwierdzenia": true
+    }
+  ]
+}

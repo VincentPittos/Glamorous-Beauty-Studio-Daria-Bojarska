@@ -1,0 +1,11 @@
+{
+  "DO_ZMIANY": "W pliku stoi jedna zweryfikowana opinia. Pozostałe przepisz z wizytówki Google dosłownie, razem z literówkami autorek, i uzupełnij pole autor. Dopóki opinii jest mniej niż trzy, ściana nie przesuwa się, tylko pokazuje je jako listę.",
+  "uwaga": "Nigdy nie redaguj cudzych opinii i nigdy nie wymyślaj własnych. Publikowanie przerobionych albo zmyślonych opinii konsumenckich jest zakazane. Opinie wystawione w Google jako sama ocena, bez treści, nie trafiają tutaj, ale liczą się do pola ocena.liczbaOpinii w salon.json.",
+  "pozycje": [
+    {
+      "autor": "{TODO: imię autorki z Google}",
+      "kiedy": "",
+      "tekst": "Robiłam laminację brwi. Pełen profesjonalizm, miła atmosfera"
+    }
+  ]
+}

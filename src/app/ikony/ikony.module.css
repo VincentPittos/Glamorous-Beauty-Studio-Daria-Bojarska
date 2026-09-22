@@ -1,0 +1,135 @@
+.tytul {
+  font-family: var(--kroj-naglowek);
+  font-size: clamp(2rem, 1.5rem + 2.4vw, 3rem);
+  font-weight: 400;
+  margin: 0;
+  color: var(--tusz);
+}
+
+.wstep {
+  color: var(--tusz-2);
+  max-width: 62ch;
+  margin: 12px 0 clamp(28px, 3.4vw, 40px);
+}
+
+.zestaw {
+  margin-bottom: clamp(30px, 3.6vw, 44px);
+}
+
+.zestaw h2 {
+  font-size: clamp(1.3rem, 1.1rem + 0.9vw, 1.7rem);
+}
+
+.opisZestawu {
+  color: var(--tusz-2);
+  font-size: 0.95rem;
+  margin: 6px 0 18px;
+}
+
+.siatka {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 14px;
+}
+
+.pole {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 18px 10px;
+  background: var(--biel);
+  border: 1px solid var(--krem-2);
+  border-radius: 2px;
+  text-align: center;
+}
+
+.poleCiemne {
+  background: var(--atrament-2);
+  border-color: rgb(var(--akcent-rgb) / 0.3);
+}
+
+.poleCiemne code {
+  color: var(--mgla);
+}
+
+.goly {
+  display: inline-flex;
+  color: var(--akcent-ciemne);
+}
+
+.pole code {
+  font-size: 0.76rem;
+  color: var(--tusz-2);
+  word-break: break-all;
+}
+
+.naCiemnym {
+  color: var(--biel);
+  margin-bottom: 22px;
+}
+
+.paleta {
+  list-style: none;
+  margin: 22px 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 12px;
+}
+
+.paleta li {
+  display: grid;
+  grid-template-columns: 44px 1fr;
+  grid-template-areas:
+    'probka nazwa'
+    'probka token'
+    'probka hex';
+  align-items: center;
+  gap: 0 14px;
+  padding: 12px 14px;
+  background: var(--biel);
+  border: 1px solid var(--krem-2);
+  border-radius: 2px;
+}
+
+.probka {
+  grid-area: probka;
+  width: 44px;
+  height: 44px;
+  border-radius: 2px;
+  border: 1px solid rgb(var(--atrament-rgb) / 0.18);
+}
+
+.paleta strong {
+  grid-area: nazwa;
+  font-weight: 500;
+  font-size: 0.94rem;
+  color: var(--tusz);
+}
+
+.paleta code {
+  font-size: 0.76rem;
+  color: var(--tusz-2);
+}
+
+.paleta code:nth-of-type(1) {
+  grid-area: token;
+}
+
+.paleta code:nth-of-type(2) {
+  grid-area: hex;
+}
+
+.tytulKrojow {
+  margin-top: clamp(32px, 4vw, 48px);
+}
+
+.proba {
+  font-size: 1.3rem;
+  color: var(--tusz);
+  margin: 0 0 14px;
+}

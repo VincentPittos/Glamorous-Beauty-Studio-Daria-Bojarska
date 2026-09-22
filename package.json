@@ -1,0 +1,31 @@
+{
+  "name": "glamorous-beauty-studio",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "zdjecia": "node scripts/przygotuj-zdjecia.mjs",
+    "kontrast": "node scripts/kontrast.mjs"
+  },
+  "dependencies": {
+    "@fontsource/cormorant-garamond": "^5.2.6",
+    "@fontsource/jost": "^5.2.6",
+    "@fontsource/pinyon-script": "^5.2.6",
+    "@fontsource/playfair-display": "^5.2.6",
+    "next": "16.2.12",
+    "react": "19.2.4",
+    "react-dom": "19.2.4"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.2.12",
+    "sharp": "^0.34.2",
+    "typescript": "^5"
+  }
+}

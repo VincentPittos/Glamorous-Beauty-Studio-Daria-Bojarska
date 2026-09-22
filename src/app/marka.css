@@ -1,0 +1,116 @@
+/*
+  TOŻSAMOŚĆ GABINETU. Plik, od którego zaczyna się każda zmiana wyglądu.
+
+  Paleta pochodzi z banera marki Glamorous Beauty Studio. Najpierw stoją
+  kolory marki z nazwami z brandbooka, pod nimi tokeny semantyczne, którymi
+  posługują się wszystkie arkusze. Komponenty nie mają wpisanego ani jednego
+  koloru na sztywno, więc zmiana tutaj przechodzi przez całą stronę.
+
+  KONTRAST. Złoto i karmel służą do kresek, ramek, ikon i dużych elementów.
+  Nie stawiaj ich jako koloru małego tekstu na kremowym tle, bo nie przejdą
+  normy WCAG AA. Do tekstu na jasnym tle służą --tusz i --tusz-2, oba liczone
+  i sprawdzone skryptem npm run kontrast.
+*/
+
+:root {
+  /* ---- Kolory marki, prosto z banera ---- */
+  --c-choc: #4a2912; /* ciemna czekolada */
+  --c-brown: #633b1e; /* głęboki brąz */
+  --c-caramel: #a87550; /* karmelowy brąz */
+  --c-beige-warm: #c99b75; /* ciepły beż */
+  --c-gold: #c99a3d; /* klasyczne złoto */
+  --c-gold-light: #e0ba69; /* jasne złoto */
+  --c-sand: #dfc5a6; /* piaskowy beż */
+  --c-cream: #f1e1cd; /* kremowe tło */
+  --c-ivory: #faf3e8; /* ciepła kość słoniowa */
+  --c-white-warm: #fffdf7; /* ciepła biel */
+
+  /*
+    Te same kolory rozbite na kanały. Potrzebne wszędzie tam, gdzie kolor
+    wchodzi z przezroczystością, czyli w poświatach, ramkach i nakładkach.
+    Zapis rgb(var(--x-rgb) / 0.4) działa w każdej dzisiejszej przeglądarce.
+  */
+  --choc-rgb: 74 41 18;
+  --brown-rgb: 99 59 30;
+  --caramel-rgb: 168 117 80;
+  --gold-rgb: 201 154 61;
+  --gold-light-rgb: 224 186 105;
+  --sand-rgb: 223 197 166;
+  --white-warm-rgb: 255 253 247;
+
+  /* ---- Tokeny semantyczne ---- */
+
+  /* Tła sekcji ciemnych i powierzchnie na nich. */
+  --atrament: var(--c-choc);
+  --atrament-2: #593317;
+  --atrament-3: var(--c-brown);
+  --atrament-rgb: var(--choc-rgb);
+
+  /* Tła sekcji jasnych i obramowania na nich. */
+  --krem: var(--c-cream);
+  --krem-2: var(--c-sand);
+  --ivory: var(--c-ivory);
+
+  /*
+    Obramowanie pól formularza. Osobny, ciemniejszy token, bo pole tekstowe
+    jest elementem sterującym i jego krawędź musi mieć 3 do 1 wobec tła.
+    Piaskowy beż wypada na bieli 1,63 do 1, czyli dla części klientek pole
+    po prostu nie istnieje. Karmel daje 3,88 na bieli i 3,08 na kremie.
+    Obramowania ozdobne kart zostają piaskowe, bo nie są sterowaniem.
+  */
+  --obrys-pola: var(--c-caramel);
+
+  /* Tekst na jasnym tle. Nigdy złoto, nigdy karmel. */
+  --tusz: var(--c-choc);
+  --tusz-2: var(--c-brown);
+  --tusz-2-rgb: var(--brown-rgb);
+
+  /*
+    Akcent marki. Kolejno: podstawowy, rozjaśniony na gradienty i najazdy,
+    przyciemniony na kreski i ikony na jasnym tle, oraz wersja do tekstu
+    na jasnym tle. --akcent-tekst jest brązem, nie złotem, właśnie dlatego,
+    że złoto na kremie nie przechodzi kontrastu.
+  */
+  --akcent: var(--c-gold);
+  --akcent-jasne: var(--c-gold-light);
+  --akcent-ciemne: var(--c-caramel);
+  --akcent-tekst: var(--c-brown);
+  --akcent-rgb: var(--gold-rgb);
+  --akcent-jasne-rgb: var(--gold-light-rgb);
+  --akcent-ciemne-rgb: var(--caramel-rgb);
+
+  /* Belki usług z banera: pociągnięcie pędzla od karmelu do ciepłego beżu. */
+  --belka: linear-gradient(90deg, var(--c-caramel), var(--c-beige-warm));
+
+  --biel: var(--c-white-warm);
+  --biel-rgb: var(--white-warm-rgb);
+  --mgla: rgb(var(--white-warm-rgb) / 0.78);
+
+  /* Kolor komunikatu o błędzie. Jedyny kolor spoza palety marki, bo czerwień
+     jest tu sygnałem, a nie ozdobą. */
+  --blad: #8f2f22;
+  --blad-rgb: 143 47 34;
+
+  /*
+    Kroje pisma. Rodziny muszą odpowiadać paczkom @fontsource wczytywanym
+    w src/app/layout.tsx. Podmieniasz krój? Zmień obie rzeczy naraz.
+
+    --kroj-naglowek  nagłówki i przyciski
+    --kroj-tekst     treść, minimum 17 pikseli
+    --kroj-ryte      logotyp, menu, małe etykiety wersalikami
+    --kroj-skrypt    linia odręczna, wyłącznie ozdobnie i nigdy dłużej niż
+                     pięć słów
+  */
+  --kroj-naglowek: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --kroj-tekst: 'Jost', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --kroj-ryte: 'Cormorant Garamond', Georgia, serif;
+  --kroj-skrypt: 'Pinyon Script', 'Segoe Script', cursive;
+
+  /*
+    Proporcje zdjęcia w sekcji głównej, szerokość przez wysokość. Muszą
+    zgadzać się z plikiem public/images/hero/zabieg.webp, inaczej zdjęcie
+    zostanie przycięte albo rozciągnięte. Skrypt npm run zdjecia wypisuje
+    wymiary każdego pliku, który przygotuje.
+  */
+  --hero-proporcje: 762 / 846;
+}

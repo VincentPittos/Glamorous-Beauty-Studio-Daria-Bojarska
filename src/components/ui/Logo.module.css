@@ -1,0 +1,61 @@
+.logo {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  text-decoration: none;
+  line-height: 1;
+}
+
+/* Sygnet z diamentem, ten sam kształt co ikona ornamentu przy nagłówkach. */
+.sygnet {
+  color: var(--akcent);
+  margin-bottom: 1px;
+}
+
+@media (max-width: 640px) {
+  .sygnet {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.nazwisko {
+  font-family: var(--kroj-ryte);
+  font-weight: 600;
+  font-size: clamp(0.92rem, 0.72rem + 0.72vw, 1.4rem);
+  letter-spacing: 0.16em;
+  /* Złoty połysk z logotypu klientki, odtworzony gradientem na tekście. */
+  background-image: linear-gradient(175deg, var(--akcent-jasne) 6%, var(--akcent) 42%, var(--akcent-ciemne) 72%, var(--akcent-jasne) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  white-space: nowrap;
+}
+
+.podpis {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--kroj-ryte);
+  font-size: clamp(0.5rem, 0.42rem + 0.28vw, 0.62rem);
+  letter-spacing: 0.3em;
+  color: var(--akcent);
+  white-space: nowrap;
+}
+
+.podpis::before,
+.podpis::after {
+  content: '';
+  width: 14px;
+  height: 1px;
+  background: currentColor;
+}
+
+/* Przeglądarki bez obsługi przycinania tła do tekstu dostają pełne złoto. */
+@supports not ((-webkit-background-clip: text) or (background-clip: text)) {
+  .nazwisko {
+    background-image: none;
+    color: var(--akcent);
+  }
+}

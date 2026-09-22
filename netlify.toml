@@ -1,0 +1,18 @@
+# Wdrozenie na Netlify.
+#
+# Formularz pytan chodzi przez trase w src/app/api, wiec strona potrzebuje
+# serwera. Podlacz repozytorium do Netlify zamiast wgrywac paczke recznie,
+# wtyczka Next.js uruchomi trase sama.
+#
+# Zmienne srodowiskowe ustaw w panelu Netlify (Site settings -> Environment
+# variables), nigdy w kodzie. Lista jest w .env.example.
+
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+[build.environment]
+  NODE_VERSION = "22"
