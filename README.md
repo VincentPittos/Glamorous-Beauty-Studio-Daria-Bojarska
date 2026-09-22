@@ -78,9 +78,15 @@ prosto z `marka.css` i sprawdza 26 par, które naprawdę występują na stronie.
 
 Kroje pisma: **Playfair Display** na nagłówki, **Jost** na tekst,
 **Cormorant Garamond** na logotyp i etykiety wersalikami, **Pinyon Script**
-na dwie odręczne wstawki. Wszystkie z paczek `@fontsource`, serwowane
-z własnego serwera, z subsetem `latin-ext`, więc polskie ogonki działają bez
-odpytywania Google Fonts.
+na dwie odręczne wstawki. Serwujemy je z własnego serwera, bez odpytywania
+Google Fonts, z subsetem `latin-ext`, więc polskie ogonki działają.
+
+Pinyon Script jest **podcięty do dwudziestu znaków**, które naprawdę są na
+stronie: drugiej linii nagłówka i podpisu pod tekstem o właścicielce. Pełne
+paczki ważyły 73 kB i schodziły na telefon nad linią załamania, podcięty plik
+waży 7 kB. **Zmieniasz któryś z tych dwóch napisów? Uruchom `npm run kroj`**,
+inaczej nowe litery nie będą miały z czego się narysować. Skrypt sam sprawdza
+pokrycie i przerywa, gdy czegoś brakuje.
 
 Ikony: `src/components/ui/Ikona.tsx`, siatka 24 na 24, kreska 1,5 piksela.
 Na stronie stoją w medalionie, czyli ciemnym krążku ze złotym pierścieniem.
@@ -126,6 +132,9 @@ Zmienne środowiskowe: wzór w `.env.example`, opis w `RAPORT.md`.
   kremie, i na czekoladzie.
 - **Cennik i FAQ stoją na znacznikach `details`**, więc rozwijają się bez
   JavaScriptu i obsługują klawiaturę bez dokładania atrybutów.
+- **Galeria efektów ma kwadratowe pola.** Zestawienia przed i po też są
+  kwadratowe, więc w kwadratowym polu nic się nie gubi. Przy polach pionowych
+  przycięcie zjadało brzegi i na miniaturze zostawała połowa porównania.
 - **Zdjęcia nad linią załamania mają `loading="eager"` i `fetchPriority`,
   nie `priority`.** Prop `priority` jest w Next.js 16 wycofany na rzecz
   `preload`, a dokumentacja mówi wprost, żeby `preload` pominąć tam, gdzie
@@ -143,8 +152,10 @@ stoi zakres z kilku uruchomień, a nie jeden najlepszy wynik:
 
 | Strona | Wydajność | Dostępność | Dobre praktyki | SEO |
 | --- | --- | --- | --- | --- |
-| `/` | 93 do 99 | 100 | 100 | 100 |
-| `/zabiegi/sylwetka` | 94 do 98 | 100 | 100 | 100 |
+| `/` | 90 do 97 | 100 | 100 | 100 |
+| `/zabiegi/sylwetka` | 95 do 98 | 100 | 100 | 100 |
+
+Mierzone na prawdziwych zdjęciach, nie na kadrach zastępczych.
 
 `npm run kontrast`: 26 z 26 par przechodzi próg WCAG AA.
 

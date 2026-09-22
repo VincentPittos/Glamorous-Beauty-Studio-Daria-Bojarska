@@ -14,8 +14,8 @@ export function Hero() {
         <Image
           src="/images/hero/zabieg.webp"
           alt={hero.altZdjecia}
-          width={762}
-          height={846}
+          width={1190}
+          height={1322}
           sizes="(max-width: 980px) 100vw, 62vw"
           /*
             Od Next.js 16 prop priority jest wycofany na rzecz preload.
@@ -26,12 +26,11 @@ export function Hero() {
           loading="eager"
           fetchPriority="high"
           /*
-            Plik ma 762 piksele szerokosci i zostal przygotowany recznie
-            skryptem, w wyzszej jakosci i z wyostrzeniem. Optymalizator
-            Next.js podstawial pod niego wariant 589 pikseli, ktory
-            przegladarka musiala powiekszac. Serwujemy oryginal.
+            Zdjecie przechodzi przez optymalizator Next.js, wiec telefon
+            dostaje wariant 640 pikseli zamiast pelnych 1190. Na laczu
+            komorkowym to roznica widoczna w czasie wyswietlenia najwiekszego
+            elementu, czyli wlasnie tego zdjecia.
           */
-          unoptimized
         />
       </div>
 

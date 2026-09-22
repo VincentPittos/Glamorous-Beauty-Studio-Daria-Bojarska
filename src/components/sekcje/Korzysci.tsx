@@ -11,7 +11,7 @@ import style from './Korzysci.module.css'
  */
 export function Korzysci() {
   return (
-    <section id="korzysci" className="sekcja sekcja--kosc">
+    <section id="korzysci" className="sekcja sekcja--krem">
       <div className="ramka">
         <h2 className="tylko-czytnik">{tresci.korzysci.naglowek}</h2>
 

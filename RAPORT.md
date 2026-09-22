@@ -11,13 +11,13 @@ publikację albo trzeba to potwierdzić, zanim strona zobaczy pierwszą klientk�
 
 | Czego brakuje | Gdzie to wchodzi | Dlaczego to ważne |
 | --- | --- | --- |
-| **Cennik, 28 pozycji** | `src/data/cennik.json` | Do czasu uzupełnienia w miejscu kwoty stoi zdanie „Cenę ustalamy na konsultacji”. Nic nie jest zmyślone, ale klientka nie ma punktu odniesienia. |
+| **Cennik, 28 pozycji** | `src/data/cennik.json` | Na Twoją prośbę zdanie o ustalaniu ceny na konsultacji zniknęło, więc pozycja bez ceny pokazuje się jako sama nazwa zabiegu. **Sekcja nazywa się „Ile to kosztuje” i nie ma w niej ani jednej kwoty.** To najpilniejszy brak na tej liście. |
 | **Godziny otwarcia** | `src/data/salon.json` | **Wpisane są godziny zastępcze**, pon do pt 9 do 18 i sobota 9 do 14. Widać je w czterech miejscach naraz: stopka, kontakt, dane strukturalne i wolne terminy w kalendarzu. Błędne godziny to realny problem. |
 | **Dokładne współrzędne z wizytówki Google** | `src/data/salon.json`, pole `geo` | Teraz jest środek Chełmży. Dane strukturalne wskazują przez to nie ten punkt co trzeba. |
 | **E-mail, NIP** | `src/data/salon.json` | Potrzebne w polityce prywatności i regulaminie. |
 | **Adresy profili Instagram i Facebook** | `src/data/salon.json` | Sekcja „Obserwuj” w stopce nie pokazuje się wcale, dopóki pola są puste. |
 | **Bezpośredni odnośnik do wizytówki Google** | `src/data/salon.json` | Teraz jest wyszukiwanie po nazwie, działa, ale odnośnik wprost jest pewniejszy. |
-| **Opinie z Google** | `src/data/opinie.json` | Wpisana jest **jedna** zweryfikowana: „Robiłam laminację brwi. Pełen profesjonalizm, miła atmosfera”, bez imienia autorki. Resztę trzeba przepisać z wizytówki **dosłownie**, razem z literówkami. Publikowanie przerobionych albo zmyślonych opinii konsumenckich jest zakazane. |
+| **Opinie z Google** | `src/data/opinie.json` | Wgrane, 24 z treścią. Zostało jedno do sprawdzenia, patrz punkt 1.4. |
 | **Doświadczenie, szkolenia, certyfikaty** | `src/data/tresci.json`, `oNas.todo` | Akapit jest przygotowany, ale się nie renderuje, dopóki zawiera znacznik. Warto napisać go razem z Panią Darią i dać jej przeczytać na głos. |
 | **Zakres elektrokoagulacji i usuwania włókniaków** | `src/data/uslugi.json` | Czy wymagana jest konsultacja przed zabiegiem. |
 | **Drenaż limfatyczny: ręczny czy aparaturowy, jakie partie, ile trwa** | `src/data/uslugi.json` | Opis jest ogólny właśnie dlatego, że tego nie wiemy. |
@@ -25,7 +25,9 @@ publikację albo trzeba to potwierdzić, zanim strona zobaczy pierwszą klientk�
 | **Konsultacja: osobna pozycja w kalendarzu, płatna czy nie, odliczana czy nie** | `src/data/uslugi.json`, FAQ | Wpływa na ustawienie kalendarza w GHL. |
 | **Zasady odwołania i przeniesienia wizyty** | `src/data/faq.json`, `/regulamin-rezerwacji` | Propozycja w regulaminie: 48 godzin. Do zatwierdzenia. |
 | **Ogólne zalecenia przed wizytą** | `src/data/faq.json` | Na przykład co odstawić przed peelingami i terapiami przebarwień. |
-| **Zdjęcia i logo z Dysku Google** | `assets-source/` | Patrz punkt 1.3. |
+| **Logo w wektorze** | `assets-source/` | Patrz punkt 1.3. |
+| **Zgody na wizerunek klientek** | galeria efektów | Patrz punkt 1.4, to blokuje publikację. |
+| **Zdjęcia do sześciu filarów oferty** | `assets-source/uslugi/` | Prompty w `assets-source/generated/PROMPTS.md`. Do czasu ich wygenerowania w kartach oferty stoją kadry zastępcze. |
 
 ### 1.2 Ode mnie albo od Ciebie
 
@@ -39,31 +41,64 @@ publikację albo trzeba to potwierdzić, zanim strona zobaczy pierwszą klientk�
 | Wygenerowanie grafik AI | `assets-source/generated/PROMPTS.md` |
 | Trwały magazyn idempotencji webhooka | patrz punkt 4.4 |
 
-### 1.3 Czego nie udało się pobrać i dlaczego
+### 1.3 Zdjęcia: co jest, a czego nie ma
 
-Materiały leżą na Dysku Google w folderze **Glamorous Beauty Studio Daria
-Bojarska** (`1Ewr1F1DRg4NgRFShA333FNFeexqcmvb9`). Widziałem ich listę, ale
-**nie mogłem pobrać plików**: polityka sieciowa tego środowiska blokuje
-połączenia do `drive.google.com`. Pliki trzeba pobrać ręcznie i położyć
-w `assets-source/`, dokładnie tak, jak opisuje `assets-source/README.md`.
+**Są już na stronie:**
 
-Dotyczy to:
+- zdjęcie sekcji głównej, wgrane bezpośrednio w rozmowie,
+- `O nas - Daria Bojarska.jpg` z Dysku, w sekcji O nas,
+- dwanaście zdjęć z podfolderu `Portfolio` z Dysku, w galerii efektów.
 
-- `Logo.png` (`1CsE2rjMReywOJqCnJwF1N66f7rFmbphm`),
-- `O nas - Daria Bojarska.jpg` (`1tcwFscRLBaL_GQt4x6aJT3ZbsVfnKuIv`),
-- dwunastu zdjęć z podfolderu `Portfolio` (`1Lj1_LUx0jZ-xSoUmyKlhhdlGyVq2aE83`).
+Pliki z Dysku udało się pobrać przez konektor Dysku Google. Bezpośrednie
+połączenie do `drive.google.com` jest w tym środowisku zablokowane polityką
+sieciową, więc gdyby trzeba było powtórzyć operację, jedyną drogą jest
+konektor, a nie `curl`. Oryginały leżą w `assets-source/`, wersje serwowane
+na stronie powstają z nich przez `npm run zdjecia`.
 
-Nazwy plików z Dysku są zmapowane na pozycje w `src/data/portfolio.json`,
-w polu `zrodloNaDysku`, więc wiadomo, który plik jest którym zdjęciem.
+**Brakuje nadal:**
 
-Grafik AI też nie wygenerowałem: konto Higgsfield podpięte do tej sesji ma
-**zero kredytów i plan darmowy**. Komplet promptów, razem ze stylem bazowym
-i zasadami twardymi, leży w `assets-source/generated/PROMPTS.md`.
+- **Logo w wektorze.** `Logo.png` (`1CsE2rjMReywOJqCnJwF1N66f7rFmbphm`) nie
+  jest jeszcze wgrane. Logotyp na stronie składa się z tekstu i rysowanego
+  sygnetu, a diament w `icon.svg` i w ikonie `diament` jest geometrią
+  zastępczą.
+- **Sześć zdjęć do filarów oferty.** Konto Higgsfield podpięte do tej sesji
+  ma zero kredytów i plan darmowy, więc grafik nie wygenerowałem. Komplet
+  promptów leży w `assets-source/generated/PROMPTS.md`. W kartach oferty
+  i na podstronach stoją do tego czasu kadry zastępcze rysowane w palecie
+  marki, skryptem `node scripts/zastepcze-zdjecia.mjs`.
 
-Do czasu dostarczenia prawdziwych zdjęć na stronie stoją kadry zastępcze
-narysowane w palecie marki, generowane skryptem
-`node scripts/zastepcze-zdjecia.mjs`. Nie przedstawiają nikogo i niczego nie
-obiecują. Po wrzuceniu prawdziwych plików wystarczy `npm run zdjecia`.
+### 1.4 Trzy rzeczy do rozstrzygnięcia przy zdjęciach i opiniach
+
+**Zgody na wizerunek.** Na zdjęciach w galerii widać twarze klientek. Przed
+publikacją potwierdź, że Pani Daria ma od nich pisemne zgody na
+wykorzystanie wizerunku **na stronie internetowej**. Zgoda na publikację na
+Facebooku nie przenosi się automatycznie na inne kanały. To blokuje
+publikację galerii, nie da się tego obejść.
+
+**Dwa zdjęcia pokazują zabiegi spoza oferty.** Na jednym kadrze pracuje
+urządzenie z napisem **EMSzero**, na innym widnieje podpis **LIP FLIP**.
+Żadnego z tych zabiegów nie ma w opisanej ofercie. Albo oferta na stronie
+jest niepełna i trzeba ją uzupełnić, albo te dwa zdjęcia nie powinny stać
+w galerii. Do decyzji Pani Darii.
+
+**Opisy zdjęć mówią o porównaniu kadrów, nie o efekcie.** Przy zestawieniach
+bez wpalonego podpisu nie da się z samego obrazu orzec, który kadr jest
+sprzed zabiegu, a który po nim. Dlatego opisy brzmią „porównanie dwóch
+kadrów tej samej klientki”. Po potwierdzeniu z Panią Darią warto je
+przepisać na konkretne.
+
+**Jedna opinia jest podpisana nickiem** „Hdhdhdbxjxjxj Hdhdjdbxndjxj”. Jest
+prawdziwa i pozytywna, więc została, bo wybieranie tylko tych opinii, które
+ładnie wyglądają, to już redagowanie cudzych opinii. Jeśli Pani Daria woli
+ją zdjąć, to jej decyzja, nie moja.
+
+**Daty opinii są celowo puste.** Google podaje wiek opinii względnie, na
+przykład „dziesięć miesięcy temu”. Taka data wpisana na sztywno zestarzeje
+się na stronie w ciągu kilku tygodni, więc pole `kiedy` zostaje puste.
+
+**Dłuższe opinie sprawdź jeszcze raz w Google.** Część wpisów Google pokazuje
+w widoku zwiniętym ze znakiem wielokropka. Przepisałem je bez tego znaku,
+ale nie mam pewności, czy w kilku przypadkach nie brakuje końcówki.
 
 ---
 
@@ -102,12 +137,17 @@ Trzy rzeczy z palety w briefie musiałem zmienić, bo nie przechodziły:
 
 Wydajność waha się między kolejnymi przebiegami, bo mierzona jest na
 symulowanym łączu. Poniżej zakres z kilku uruchomień, a nie jeden najlepszy
-wynik.
+wynik. Pomiary na prawdziwych zdjęciach, nie na kadrach zastępczych.
 
 | Strona | Wydajność | Dostępność | Dobre praktyki | SEO |
 | --- | --- | --- | --- | --- |
-| `/` | **93 do 99** | **100** | **100** | **100** |
-| `/zabiegi/sylwetka` | **94 do 98** | **100** | **100** | **100** |
+| `/` | **90 do 97** | **100** | **100** | **100** |
+| `/zabiegi/sylwetka` | **95 do 98** | **100** | **100** | **100** |
+
+Prawdziwe zdjęcia kosztowały kilka punktów wydajności. Odrobiły je dwie
+zmiany: zdjęcie sekcji głównej idzie przez optymalizator Next.js, więc
+telefon dostaje wariant 640 pikseli zamiast pełnych 1190, a krój odręczny
+jest podcięty z 73 kB do 7 kB.
 
 Progi z briefu: wydajność 90, dostępność 95, SEO 100. Wszystkie przekroczone
 w każdym przebiegu.
@@ -127,15 +167,16 @@ jak ma, ale sama strona nie.
 
 | Plik | Sekcja | Skąd |
 | --- | --- | --- |
-| `public/images/hero/zabieg.webp` | sekcja główna | zastępczy, docelowo `assets-source/hero-foto.jpg` |
-| `public/images/o-nas/wlascicielka.webp` | O nas | zastępczy, docelowo `O nas - Daria Bojarska.jpg` z Dysku |
+| `public/images/hero/zabieg.webp` | sekcja główna | **prawdziwe**, wgrane w rozmowie, oryginał w `assets-source/hero-foto.webp` |
+| `public/images/o-nas/wlascicielka.webp` | O nas | **prawdziwe**, `O nas - Daria Bojarska.jpg` z Dysku |
 | `public/images/uslugi/zdrowa-skora.webp` | filar 1, karta i podstrona | zastępczy, prompt w `PROMPTS.md` |
 | `public/images/uslugi/problemy-skorne.webp` | filar 2 | j.w. |
 | `public/images/uslugi/odmladzanie.webp` | filar 3 | j.w. |
 | `public/images/uslugi/sylwetka.webp` | filar 4, sylwetka i drenaż | j.w. |
 | `public/images/uslugi/oprawa-oka.webp` | filar 5 | j.w. |
 | `public/images/uslugi/doradztwo.webp` | filar 6 | j.w. |
-| `public/images/portfolio/portfolio-01` do `-12`, duże i mini | Efekty | zastępcze, docelowo podfolder `Portfolio` z Dysku |
+| `public/images/portfolio/portfolio-01` do `-12`, duże i mini | Efekty | **prawdziwe**, podfolder `Portfolio` z Dysku |
+| `public/fonts/pinyon-script-podciety.woff2` | krój odręczny | podcięty skryptem `npm run kroj` |
 | `src/app/icon.svg` | ikona karty przeglądarki | sygnet z diamentem, **geometria zastępcza** |
 
 Logotyp w nagłówku i stopce składa się z tekstu i rysowanego sygnetu.
@@ -281,9 +322,13 @@ ale nie jest poradą prawną.
 - [ ] Prawdziwe godziny otwarcia
 - [ ] Współrzędne z wizytówki Google
 - [ ] E-mail, NIP, profile społecznościowe
-- [ ] Opinie przepisane z Google dosłownie
-- [ ] Zdjęcia z Dysku wrzucone, `npm run zdjecia` uruchomiony
-- [ ] `--hero-proporcje` i wymiary w `portfolio.json` przepisane
+- [x] Opinie przepisane z Google dosłownie
+- [x] Zdjęcia z Dysku wrzucone, `npm run zdjecia` uruchomiony
+- [x] `--hero-proporcje` i wymiary w `portfolio.json` przepisane
+- [ ] Zgody klientek na wizerunek potwierdzone
+- [ ] Rozstrzygnięte, co ze zdjęciami EMSzero i LIP FLIP
+- [ ] Opisy zdjęć w galerii potwierdzone z Panią Darią
+- [ ] Dłuższe opinie porównane z Google, czy nic nie zostało ucięte
 - [ ] Logo w wektorze podmienione w `Logo.tsx` i `icon.svg`
 - [ ] Regulamin rezerwacji zatwierdzony, adnotacja zdjęta
 - [ ] Wszystkie flagi `doPotwierdzenia` w `faq.json` przestawione na `false`
@@ -307,7 +352,10 @@ została skórka i cała treść. Trzy odstępstwa od szablonu, wszystkie
    potwierdzenia od kogoś innego niż sam gabinet.
 2. **Nowe sekcje.** Pasek korzyści pod sekcją główną, „Jak wygląda wizyta”
    przed cennikiem i ciemne wezwanie na końcu strony.
-3. **Rezerwacja ma trzy kroki zamiast jednego**, bo doszedł zadatek.
+3. **O nas stoi jako druga sekcja**, zaraz po sekcji głównej, tak jak było
+   w szablonie. W kameralnym gabinecie klientka wybiera konkretną osobę,
+   a nie firmę, więc poznaje ją zanim zobaczy ofertę.
+4. **Rezerwacja ma trzy kroki zamiast jednego**, bo doszedł zadatek.
    Informacja o nim stoi **nad kalendarzem**, przed wyborem terminu, a nie
    na końcu ścieżki. Klientka, która dowiaduje się o opłacie dopiero po
    podaniu numeru telefonu, czuje się wciągnięta w coś, na co się nie

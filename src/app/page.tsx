@@ -15,10 +15,12 @@ import { Proces } from '@/components/sekcje/Proces'
 /**
  * Kolejność sekcji na stronie głównej.
  *
- * Dowód społeczny stoi wysoko, zaraz po ofercie: najpierw zdjęcia efektów,
- * potem opinie z Google. Klientka, która pierwszy raz słyszy o gabinecie,
- * potrzebuje potwierdzenia od kogoś innego niż sam gabinet, zanim przeczyta
- * o właścicielce i zanim zobaczy ceny.
+ * Druga sekcja to O nas, czyli twarz i nazwisko od razu po sekcji głównej.
+ * W kameralnym gabinecie klientka wybiera konkretną osobę, a nie firmę,
+ * więc poznaje ją zanim zobaczy ofertę.
+ *
+ * Zaraz po ofercie stoi dowód społeczny: najpierw zdjęcia efektów, potem
+ * opinie z Google.
  *
  * Sekcja o zadatku jest częścią opisu wizyty, a nie niespodzianką na końcu
  * ścieżki. Dlatego Proces stoi przed cennikiem i przed rezerwacją.
@@ -31,11 +33,11 @@ export default function Strona() {
     <>
       <Schema />
       <Hero />
+      <ONas />
       <Korzysci />
       <Oferta />
       <Portfolio />
       <Opinie />
-      <ONas />
       <Proces />
       <Cennik />
       {/* Sekcja rezerwacji czyta wybraną usługę z adresu, więc dostaje własną

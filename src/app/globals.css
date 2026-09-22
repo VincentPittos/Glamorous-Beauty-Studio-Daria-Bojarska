@@ -11,6 +11,26 @@
 */
 @import './marka.css';
 
+/*
+  KRÓJ ODRĘCZNY, PODCIĘTY.
+
+  Pinyon Script stoi na stronie w dwóch miejscach: druga linia nagłówka
+  w sekcji głównej i podpis pod tekstem o właścicielce. Razem dwadzieścia
+  znaków. Pełne paczki @fontsource ważyły 74 kB i schodziły na telefon nad
+  linią załamania, więc zamiast nich wchodzi plik podcięty do 3 kB.
+
+  UWAGA. Ten plik zawiera WYŁĄCZNIE znaki z tamtych dwóch napisów. Zmieniasz
+  któryś z nich w src/data/tresci.json? Uruchom npm run kroj, inaczej nowe
+  litery nie będą miały z czego się narysować i wypadną na zastępczy krój.
+*/
+@font-face {
+  font-family: 'Pinyon Script';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/pinyon-script-podciety.woff2') format('woff2');
+}
+
 :root {
   /* Ustawienia układu. Tożsamość salonu siedzi w marka.css. */
   --naglowek-h: 76px;

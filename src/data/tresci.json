@@ -13,7 +13,7 @@
     "akapit": "Zabiegi na twarz i ciało dobieramy do Twojej skóry, nie do mody. Najpierw sprawdzamy, czego potrzebuje, potem planujemy pielęgnację krok po kroku. Bez pośpiechu i bez przypadkowych zabiegów.",
     "przyciskGlowny": "Umów wizytę",
     "przyciskDrugi": "Zobacz zabiegi",
-    "altZdjecia": "Kobieta podczas zabiegu pielęgnacyjnego w gabinecie kosmetologii",
+    "altZdjecia": "Kobieta z zadbaną, rozświetloną skórą w gabinecie kosmetologii",
     "zaufanie": [
       "5,0 w Google",
       "30 opinii",
@@ -85,7 +85,8 @@
     "todo": "{TODO: doświadczenie, szkolenia i certyfikaty od Pani Darii. Ten akapit warto napisać razem z nią i dać jej przeczytać na głos.}",
     "podpis": "Daria Bojarska",
     "przycisk": "Umów wizytę",
-    "altZdjecia": "Daria Bojarska, właścicielka Glamorous Beauty Studio"
+    "altZdjecia": "Daria Bojarska, kosmetolog i właścicielka Glamorous Beauty Studio",
+    "podpisZdjecia": "Daria Bojarska. Prowadzi Glamorous Beauty Studio przy ul. Broniewskiego 28 w Chełmży."
   },
   "proces": {
     "nadtytul": "Jak to wygląda",
@@ -117,8 +118,7 @@
   "cennik": {
     "nadtytul": "Cennik",
     "naglowek": "Ile to kosztuje",
-    "wstep": "Kliknij kategorię, żeby zobaczyć ceny.",
-    "brakCeny": "Cenę ustalamy na konsultacji",
+    "wstep": "Kliknij kategorię, żeby zobaczyć, co się w niej mieści.",
     "przycisk": "Umów wizytę"
   },
   "kontakt": {
@@ -166,6 +166,10 @@
   "nawigacja": {
     "pozycje": [
       {
+        "etykieta": "O nas",
+        "cel": "/#o-nas"
+      },
+      {
         "etykieta": "Oferta",
         "cel": "/#oferta"
       },
@@ -174,16 +178,12 @@
         "cel": "/#portfolio"
       },
       {
-        "etykieta": "O nas",
-        "cel": "/#o-nas"
+        "etykieta": "Opinie",
+        "cel": "/#opinie"
       },
       {
         "etykieta": "Cennik",
         "cel": "/#cennik"
-      },
-      {
-        "etykieta": "Opinie",
-        "cel": "/#opinie"
       },
       {
         "etykieta": "Kontakt",

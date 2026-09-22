@@ -95,15 +95,6 @@
   color: var(--tusz);
 }
 
-/* Pozycja bez ceny. Zdanie jest dłuższe niż kwota, więc wolno mu się złamać
-   i nie ma pogrubienia, żeby nie krzyczało mocniej niż prawdziwe ceny. */
-.cenaBrak {
-  text-align: right;
-  color: var(--tusz-2);
-  font-size: 0.92rem;
-  font-style: italic;
-}
-
 @media (max-width: 560px) {
   .naglowekBloku {
     gap: 12px;

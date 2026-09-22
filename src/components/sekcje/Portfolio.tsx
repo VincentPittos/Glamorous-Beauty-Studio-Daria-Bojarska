@@ -64,7 +64,7 @@ export function Portfolio() {
   }, [otwarte, zamknij, przesun])
 
   return (
-    <section id="portfolio" className="sekcja sekcja--krem">
+    <section id="portfolio" className="sekcja sekcja--kosc">
       <div className="ramka">
         <p className="nadtytul">{tresc.nadtytul}</p>
         <h2>{tresc.naglowek}</h2>

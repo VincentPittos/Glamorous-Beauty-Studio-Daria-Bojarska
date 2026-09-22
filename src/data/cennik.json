@@ -1,5 +1,5 @@
 {
-  "DO_ZMIANY": "WSZYSTKIE CENY SĄ DO UZUPEŁNIENIA. Nie wpisuj tu kwot z głowy. Poproś Panią Darię o cennik i przepisz go dosłownie, razem z widełkami. Dopóki w pliku stoją znaczniki TODO, sekcja cennika pokazuje zamiast kwot zdanie o ustalaniu ceny na konsultacji.",
+  "DO_ZMIANY": "WSZYSTKIE CENY SĄ DO UZUPEŁNIENIA. Nie wpisuj tu kwot z głowy. Poproś Panią Darię o cennik i przepisz go dosłownie, razem z widełkami. Pozycja ze znacznikiem TODO pokazuje się na stronie jako sama nazwa zabiegu, bez kolumny z ceną.",
   "uwaga": "Ceny wpisuj jako tekst razem ze złotówkami, bo część pozycji ma widełki albo dwie wartości. Kolejność kategorii jest taka jak kolejność filarów w uslugi.json. Pole dopisek wyświetla się nad listą cen, użyj go tam, gdzie cena od czegoś zależy.",
   "kategorie": [
     {
@@ -38,7 +38,7 @@
       "id": "problemy-skorne",
       "nazwa": "Rozwiązywanie problemów skórnych",
       "ikona": "problemy",
-      "dopisek": "Terapie na przebarwienia wyceniamy po konsultacji, bo cena zależy od preparatu i liczby zabiegów w serii.",
+      "dopisek": null,
       "pozycje": [
         {
           "nazwa": "Azel Peel",
@@ -106,7 +106,7 @@
       "id": "sylwetka",
       "nazwa": "Modelowanie sylwetki i drenaż limfatyczny",
       "ikona": "sylwetka",
-      "dopisek": "Zabiegi na ciało najlepiej działają w serii. Cenę pojedynczej wizyty i cenę pakietu ustalamy na konsultacji.",
+      "dopisek": null,
       "pozycje": [
         {
           "nazwa": "Endermologia, pojedynczy zabieg",

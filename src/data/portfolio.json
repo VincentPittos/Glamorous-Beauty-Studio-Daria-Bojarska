@@ -1,96 +1,116 @@
 {
-  "DO_ZMIANY": "ZDJĘCIA SĄ ZASTĘPCZE. Prawdziwe leżą na Dysku Google w podfolderze Portfolio. Pobierz je, nazwij po kolei od portfolio-01.jpg do portfolio-12.jpg (mapowanie nazw z Dysku siedzi w polu zrodloNaDysku), wrzuć do assets-source/portfolio i uruchom npm run zdjecia. Skrypt wypisze wymiary każdego pliku, przepisz je do pól szerokosc i wysokosc, bo bez nich siatka przeskakuje w trakcie ładowania.",
-  "uwaga": "Zdjęcia efektów są dowodem, więc wolno je tylko kadrować, skalować i kompresować. Żadnego wygładzania skóry, zmiany koloru ani filtrów upiększających. Pierwsze zdjęcie z listy zajmuje w mozaice dwa pola w pionie i w poziomie, więc na początku postaw najmocniejszy kadr. Dwanaście zdjęć układa się w pełny prostokąt przy pięciu, trzech i dwóch kolumnach. Pole opis trafia do atrybutu alt i do podpisu w powiększeniu, puste daje neutralny opis bez twierdzenia, jaki to zabieg. Pole filar łączy zdjęcie z filarem oferty i włącza filtrowanie galerii.",
-  "TODO": "Po obejrzeniu zdjęć uzupełnij pola opis i filar. Dopóki filar jest pusty przy wszystkich zdjęciach, galeria nie pokazuje filtrów, tylko pełną mozaikę. Dopuszczalne wartości filaru: zdrowa-skora, problemy-skorne, odmladzanie, sylwetka, oprawa-oka, doradztwo.",
+  "DO_ZMIANY": "Zdjęcia pochodzą z podfolderu Portfolio na Dysku Google i są już wgrane. Opisy trzeba potwierdzić z Panią Darią: tylko ona wie, który kadr na zestawieniu jest sprzed zabiegu, a który po nim, więc do tego czasu opisy mówią o porównaniu kadrów, a nie o efekcie.",
+  "uwaga": "Zdjęcia efektów są dowodem, więc wolno je tylko kadrować, skalować i kompresować. Żadnego wygładzania skóry, zmiany koloru ani filtrów upiększających. Pierwsze zdjęcie z listy zajmuje w mozaice dwa pola w pionie i w poziomie. Dwanaście zdjęć układa się w pełny prostokąt przy pięciu, trzech i dwóch kolumnach. Pole opis trafia do atrybutu alt i do podpisu w powiększeniu. Pole filar łączy zdjęcie z filarem oferty.",
+  "WIZERUNEK": "Na zdjęciach widać twarze klientek. Przed publikacją potwierdź z Panią Darią, że ma od nich pisemne zgody na wykorzystanie wizerunku na stronie internetowej. Zgoda na publikację na Facebooku nie przenosi się automatycznie na inne kanały.",
   "pozycje": [
-    {
-      "id": "portfolio-01",
-      "duze": "/images/portfolio/portfolio-01.webp",
-      "mini": "/images/portfolio/portfolio-01-mini.webp",
-      "szerokosc": 800,
-      "wysokosc": 1000,
-      "opis": "",
-      "filar": "",
-      "zrodloNaDysku": "480946466_9295017347257291_7520367687561907279_n.jpg"
-    },
-    {
-      "id": "portfolio-02",
-      "duze": "/images/portfolio/portfolio-02.webp",
-      "mini": "/images/portfolio/portfolio-02-mini.webp",
-      "szerokosc": 800,
-      "wysokosc": 1000,
-      "opis": "",
-      "filar": "",
-      "zrodloNaDysku": "481694193_9360640530694972_3369754151314216843_n.jpg"
-    },
     {
       "id": "portfolio-03",
       "duze": "/images/portfolio/portfolio-03.webp",
       "mini": "/images/portfolio/portfolio-03-mini.webp",
       "szerokosc": 800,
-      "wysokosc": 1000,
-      "opis": "",
-      "filar": "",
+      "wysokosc": 800,
+      "opis": "Laminacja rzęs i brwi, porównanie dwóch kadrów tej samej klientki",
+      "filar": "oprawa-oka",
       "zrodloNaDysku": "482358646_9369266336499058_4549025681637441961_n.jpg"
-    },
-    {
-      "id": "portfolio-04",
-      "duze": "/images/portfolio/portfolio-04.webp",
-      "mini": "/images/portfolio/portfolio-04-mini.webp",
-      "szerokosc": 800,
-      "wysokosc": 1000,
-      "opis": "",
-      "filar": "",
-      "zrodloNaDysku": "490380779_1226282622835816_3471922500122155587_n.jpg"
-    },
-    {
-      "id": "portfolio-05",
-      "duze": "/images/portfolio/portfolio-05.webp",
-      "mini": "/images/portfolio/portfolio-05-mini.webp",
-      "szerokosc": 800,
-      "wysokosc": 1000,
-      "opis": "",
-      "filar": "",
-      "zrodloNaDysku": "491835119_1230366419094103_443800473181719677_n.jpg"
-    },
-    {
-      "id": "portfolio-06",
-      "duze": "/images/portfolio/portfolio-06.webp",
-      "mini": "/images/portfolio/portfolio-06-mini.webp",
-      "szerokosc": 800,
-      "wysokosc": 1000,
-      "opis": "",
-      "filar": "",
-      "zrodloNaDysku": "492528417_1240188504778561_3946974159488311763_n.jpg"
-    },
-    {
-      "id": "portfolio-07",
-      "duze": "/images/portfolio/portfolio-07.webp",
-      "mini": "/images/portfolio/portfolio-07-mini.webp",
-      "szerokosc": 800,
-      "wysokosc": 1000,
-      "opis": "",
-      "filar": "",
-      "zrodloNaDysku": "493682431_1241478911316187_6314431592836752297_n.jpg"
     },
     {
       "id": "portfolio-08",
       "duze": "/images/portfolio/portfolio-08.webp",
       "mini": "/images/portfolio/portfolio-08-mini.webp",
       "szerokosc": 800,
-      "wysokosc": 1000,
-      "opis": "",
-      "filar": "",
+      "wysokosc": 800,
+      "opis": "Skóra twarzy z przebarwieniami, porównanie dwóch kadrów tej samej klientki",
+      "filar": "problemy-skorne",
       "zrodloNaDysku": "494085005_1240830674714344_5228814264718541668_n.jpg"
+    },
+    {
+      "id": "portfolio-05",
+      "duze": "/images/portfolio/portfolio-05.webp",
+      "mini": "/images/portfolio/portfolio-05-mini.webp",
+      "szerokosc": 800,
+      "wysokosc": 488,
+      "opis": "Skóra ud i pośladków, porównanie dwóch kadrów po zabiegach na ciało",
+      "filar": "sylwetka",
+      "zrodloNaDysku": "491835119_1230366419094103_443800473181719677_n.jpg"
+    },
+    {
+      "id": "portfolio-01",
+      "duze": "/images/portfolio/portfolio-01.webp",
+      "mini": "/images/portfolio/portfolio-01-mini.webp",
+      "szerokosc": 800,
+      "wysokosc": 800,
+      "opis": "Brwi i rzęsy po laminacji, porównanie dwóch kadrów tej samej klientki",
+      "filar": "oprawa-oka",
+      "zrodloNaDysku": "480946466_9295017347257291_7520367687561907279_n.jpg"
+    },
+    {
+      "id": "portfolio-12",
+      "duze": "/images/portfolio/portfolio-12.webp",
+      "mini": "/images/portfolio/portfolio-12-mini.webp",
+      "szerokosc": 800,
+      "wysokosc": 454,
+      "opis": "Twarz przed zabiegiem i od razu po zabiegu, kadry opisane na zdjęciu",
+      "filar": "zdrowa-skora",
+      "zrodloNaDysku": "793212822_1686528716811202_7054441219703424332_n.jpg"
+    },
+    {
+      "id": "portfolio-06",
+      "duze": "/images/portfolio/portfolio-06.webp",
+      "mini": "/images/portfolio/portfolio-06-mini.webp",
+      "szerokosc": 800,
+      "wysokosc": 798,
+      "opis": "Skóra czoła, porównanie dwóch kadrów tej samej klientki",
+      "filar": "odmladzanie",
+      "zrodloNaDysku": "492528417_1240188504778561_3946974159488311763_n.jpg"
+    },
+    {
+      "id": "portfolio-02",
+      "duze": "/images/portfolio/portfolio-02.webp",
+      "mini": "/images/portfolio/portfolio-02-mini.webp",
+      "szerokosc": 800,
+      "wysokosc": 800,
+      "opis": "Laminacja brwi, porównanie dwóch kadrów tej samej klientki",
+      "filar": "oprawa-oka",
+      "zrodloNaDysku": "481694193_9360640530694972_3369754151314216843_n.jpg"
+    },
+    {
+      "id": "portfolio-11",
+      "duze": "/images/portfolio/portfolio-11.webp",
+      "mini": "/images/portfolio/portfolio-11-mini.webp",
+      "szerokosc": 746,
+      "wysokosc": 932,
+      "opis": "Zabieg aparaturowy na twarz wykonywany w gabinecie",
+      "filar": "zdrowa-skora",
+      "zrodloNaDysku": "536825562_1339783108152433_7028659722443649560_n.jpg"
+    },
+    {
+      "id": "portfolio-07",
+      "duze": "/images/portfolio/portfolio-07.webp",
+      "mini": "/images/portfolio/portfolio-07-mini.webp",
+      "szerokosc": 800,
+      "wysokosc": 800,
+      "opis": "Skóra czoła przed zabiegiem i po nim, kadry opisane na zdjęciu",
+      "filar": "odmladzanie",
+      "zrodloNaDysku": "493682431_1241478911316187_6314431592836752297_n.jpg"
+    },
+    {
+      "id": "portfolio-04",
+      "duze": "/images/portfolio/portfolio-04.webp",
+      "mini": "/images/portfolio/portfolio-04-mini.webp",
+      "szerokosc": 800,
+      "wysokosc": 931,
+      "opis": "Zabieg modelujący na ciało, głowica urządzenia przyłożona do brzucha",
+      "filar": "sylwetka",
+      "zrodloNaDysku": "490380779_1226282622835816_3471922500122155587_n.jpg"
     },
     {
       "id": "portfolio-09",
       "duze": "/images/portfolio/portfolio-09.webp",
       "mini": "/images/portfolio/portfolio-09-mini.webp",
       "szerokosc": 800,
-      "wysokosc": 1000,
-      "opis": "",
-      "filar": "",
+      "wysokosc": 731,
+      "opis": "Skóra czoła, porównanie dwóch kadrów tej samej klientki",
+      "filar": "odmladzanie",
       "zrodloNaDysku": "518077100_1303392368458174_4686281122903381685_n.jpg"
     },
     {
@@ -98,30 +118,10 @@
       "duze": "/images/portfolio/portfolio-10.webp",
       "mini": "/images/portfolio/portfolio-10-mini.webp",
       "szerokosc": 800,
-      "wysokosc": 1000,
-      "opis": "",
+      "wysokosc": 800,
+      "opis": "Usta, porównanie dwóch kadrów tej samej klientki",
       "filar": "",
       "zrodloNaDysku": "523596249_1315849290545815_6811782486598231389_n.jpg"
-    },
-    {
-      "id": "portfolio-11",
-      "duze": "/images/portfolio/portfolio-11.webp",
-      "mini": "/images/portfolio/portfolio-11-mini.webp",
-      "szerokosc": 800,
-      "wysokosc": 1000,
-      "opis": "",
-      "filar": "",
-      "zrodloNaDysku": "536825562_1339783108152433_7028659722443649560_n.jpg"
-    },
-    {
-      "id": "portfolio-12",
-      "duze": "/images/portfolio/portfolio-12.webp",
-      "mini": "/images/portfolio/portfolio-12-mini.webp",
-      "szerokosc": 800,
-      "wysokosc": 1000,
-      "opis": "",
-      "filar": "",
-      "zrodloNaDysku": "793212822_1686528716811202_7054441219703424332_n.jpg"
     }
   ]
 }

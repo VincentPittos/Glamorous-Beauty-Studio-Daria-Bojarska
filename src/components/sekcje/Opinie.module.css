@@ -113,7 +113,10 @@
   margin-bottom: clamp(14px, 1.6vw, 22px);
 }
 
+/* Lamania wierszy pochodza od autorek opinii, wiec zostaja widoczne.
+   Bez tego trzy zdania z osobnych linii zlewaja sie w jeden akapit. */
 .tekst {
+  white-space: pre-line;
   margin: 0 0 16px;
   color: var(--biel);
   font-size: 0.98rem;

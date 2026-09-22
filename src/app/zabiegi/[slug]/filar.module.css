@@ -166,13 +166,6 @@
   white-space: nowrap;
 }
 
-.cenaBrak {
-  color: var(--tusz-2);
-  font-size: 0.9rem;
-  font-style: italic;
-  text-align: right;
-}
-
 .faq {
   display: flex;
   flex-direction: column;

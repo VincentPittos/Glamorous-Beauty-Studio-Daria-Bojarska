@@ -14,16 +14,22 @@ export function ONas() {
 
       <div className="ramka">
         <div className={style.siatka}>
-          <div className={style.ramkaZdjecia}>
+          {/*
+            Zdjęcie z podpisem, więc figure, a nie samo img w divie. Podpis
+            niesie treść, której nie ma w atrybucie alt: alt mówi, co widać,
+            a podpis mówi, kto to jest i gdzie pracuje.
+          */}
+          <figure className={style.ramkaZdjecia}>
             <Image
               src="/images/o-nas/wlascicielka.webp"
               alt={oNas.altZdjecia}
               width={1000}
-              height={1250}
+              height={1000}
               sizes="(max-width: 860px) 90vw, 420px"
               className={style.zdjecie}
             />
-          </div>
+            <figcaption className={style.podpisZdjecia}>{oNas.podpisZdjecia}</figcaption>
+          </figure>
 
           <div className={style.tekst}>
             <p className="nadtytul">{oNas.nadtytul}</p>

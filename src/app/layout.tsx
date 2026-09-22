@@ -10,7 +10,8 @@ import '@fontsource/cormorant-garamond/600.css'
 import '@fontsource/jost/400.css'
 import '@fontsource/jost/500.css'
 import '@fontsource/jost/600.css'
-import '@fontsource/pinyon-script/400.css'
+/* Krój odręczny nie wchodzi paczką. Jest podcięty do dwóch napisów, które
+   są na stronie, i wczytuje go własna reguła font-face w globals.css. */
 
 import './globals.css'
 import { Naglowek } from '@/components/uklad/Naglowek'
@@ -31,7 +32,7 @@ export const metadata: Metadata = {
     title: tresci.meta.tytul,
     description: tresci.meta.opis,
     url: adresStrony,
-    images: [{ url: '/images/hero/zabieg.webp', width: 762, height: 846, alt: tresci.hero.altZdjecia }],
+    images: [{ url: '/images/hero/zabieg.webp', width: 1190, height: 1322, alt: tresci.hero.altZdjecia }],
   },
   twitter: {
     card: 'summary_large_image',

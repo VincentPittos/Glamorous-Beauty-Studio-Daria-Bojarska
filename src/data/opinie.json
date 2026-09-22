@@ -1,11 +1,126 @@
 {
-  "DO_ZMIANY": "W pliku stoi jedna zweryfikowana opinia. Pozostałe przepisz z wizytówki Google dosłownie, razem z literówkami autorek, i uzupełnij pole autor. Dopóki opinii jest mniej niż trzy, ściana nie przesuwa się, tylko pokazuje je jako listę.",
-  "uwaga": "Nigdy nie redaguj cudzych opinii i nigdy nie wymyślaj własnych. Publikowanie przerobionych albo zmyślonych opinii konsumenckich jest zakazane. Opinie wystawione w Google jako sama ocena, bez treści, nie trafiają tutaj, ale liczą się do pola ocena.liczbaOpinii w salon.json.",
+  "DO_ZMIANY": "Opinie przepisane z wizytówki Google. Przed publikacją porównaj je jeszcze raz z Google: część dłuższych wpisów Google pokazuje w widoku zwiniętym ze znakiem wielokropka i mogły zostać ucięte przy przepisywaniu.",
+  "uwaga": "Nigdy nie redaguj cudzych opinii i nigdy nie wymyślaj własnych. Publikowanie przerobionych albo zmyślonych opinii konsumenckich jest zakazane. Literówki, interpunkcja i emotikony autorek zostają tak, jak je napisały. Pole kiedy jest celowo puste: Google podaje wiek opinii względnie, na przykład dziesięć miesięcy temu, a taka data wpisana na sztywno zestarzeje się na stronie w ciągu kilku tygodni. Opinie wystawione jako sama ocena, bez treści, nie trafiają tutaj, ale liczą się do pola ocena.liczbaOpinii w salon.json.",
   "pozycje": [
     {
-      "autor": "{TODO: imię autorki z Google}",
+      "autor": "Natalia Lipińska",
       "kiedy": "",
-      "tekst": "Robiłam laminację brwi. Pełen profesjonalizm, miła atmosfera"
+      "tekst": "Fantastyczne miejsce! Widać ogromne zaangażowanie i pasję do pracy. Zabiegi wykonane na najwyższym poziomie, a efekty naprawdę mnie zachwyciły. Czuję się zadbana i zaopiekowana. Polecam z całego serca!"
+    },
+    {
+      "autor": "Aleksandra Wierzbowska",
+      "kiedy": "",
+      "tekst": "Pełen profesjonalizm! Indywidualne podejscie do klienta, wiedza, doświadczenie. Wysoka jakość świadczonych usług! A przy tym przesympatyczna osoba! Wszystko naj.\nWrócę po więcej!🥰"
+    },
+    {
+      "autor": "paula malutka",
+      "kiedy": "",
+      "tekst": "Bardzo profesjonalnie wykonany zabieg, który przyniósł natychmiastowe rezultaty.Twarz jest promienna i pełna życia. Doskonały sposób na poprawę kondycji cery i chwilę relaksu. Bardzo polecam!"
+    },
+    {
+      "autor": "Barbara Pacholec",
+      "kiedy": "",
+      "tekst": "Cudowny zabieg i świetne efekty! Toning Peel sprawił  że moja skóra odżyła stała się gładka i promienna .Bardzo profesjonalne podejście do klienta i relaksująca atmosfera.Serdecznie polecam .Dziękuję pani Dario."
+    },
+    {
+      "autor": "Beata Radecka",
+      "kiedy": "",
+      "tekst": "Super salon-profesjonalne podejście,zaangażowanie, bardzo miła atmosfera. Pani Daria przemiła osoba duży wybór zabiegów. Gorąco polecam."
+    },
+    {
+      "autor": "Beata Gil",
+      "kiedy": "",
+      "tekst": "To jest takie miejsce, gdzie po kilku minutach ma się wrażenie, jakby przyszło się do kogoś znajomego, a nie do obcej osoby 😀\nPrzemiła atmosfera i ciepła aura, które czuje się od samego wejścia.\nZabiegi  wykonywane są bardzo dokładnie , profesjonalnie i naprawdę jest w czym wybierać. Polecam bardzo"
+    },
+    {
+      "autor": "Marta Luntkowska",
+      "kiedy": "",
+      "tekst": "Polecam z całego serca! Przemiła atmosfera i świetne efekty zabiegów. 🌸"
+    },
+    {
+      "autor": "Paulina Ryczkowska",
+      "kiedy": "",
+      "tekst": "Jestem mega zadowolona. Robiłam laminacje brwi. Pełen profesjonalizm, miła atmosfera polecam serdecznie Panią Darię."
+    },
+    {
+      "autor": "Aleksandra Mazur",
+      "kiedy": "",
+      "tekst": "Serdecznie polecam Panią Darię ❤️ Pełen profesjonalizm, cudowna atmosfera i fantastyczne efekty! 🤩 Wizyta u Pani Dari to czysta przyjemność 🥰 w końcu czuję się naprawdę zaopiekowana! Polecam z całego serca ❤️"
+    },
+    {
+      "autor": "Ewa Wiśniewska",
+      "kiedy": "",
+      "tekst": "Świetny gabinet kosmetyczny! Profesjonalna obsługa, miła atmosfera i widoczne efekty zabiegów. Czuć dbałość o klienta i wysoką jakość usług. Zdecydowanie polecam!"
+    },
+    {
+      "autor": "Ewelina Majerowska",
+      "kiedy": "",
+      "tekst": "Zdecydowanie polecam🙂 profesjonalne podejście, pełne zaangażowanie oraz wysoka jakość usług na każdym etapie."
+    },
+    {
+      "autor": "Anna Szpankiewicz",
+      "kiedy": "",
+      "tekst": "Pani Daria bardzo sympatyczna kobietka, z profesjonalnym podejściem do klienta. Widać, że praca to też jej pasja. Gorąco polecam."
+    },
+    {
+      "autor": "Ewa Klicman-Zając",
+      "kiedy": "",
+      "tekst": "Polecam! Duży wybór zabiegów, które naprawdę działają. Pani Daria potrafi dobrze doradzić i jest bardzo profesjonalna. Na pewno wrócę :) !"
+    },
+    {
+      "autor": "Kamila Ernest",
+      "kiedy": "",
+      "tekst": "Ogromna wiedza, dobre podejście do klienta 🥰 zawsze uśmiechnięta i pomocna. Serdecznie polecam 😀"
+    },
+    {
+      "autor": "olivv_7 olivv_7",
+      "kiedy": "",
+      "tekst": "Po laminacji rzęsy wyglądają tak idealnie, że zaczynam podejrzewać, iż mają własnego stylistę. Zabieg na twarz sprawił, że skóra stała się miękka i świetlista aż trudno uwierzyć, że to moja. Atmosfera przemiła, efekty przepiękne. Miejsce, do którego wraca się z uśmiechem! Z czystym sumieniem polecam 🩷🥰"
+    },
+    {
+      "autor": "Anna Czerwińska",
+      "kiedy": "",
+      "tekst": "Bardzo polecam, świetna atmosfera podczas zabiegu."
+    },
+    {
+      "autor": "Ania Wiśniewska",
+      "kiedy": "",
+      "tekst": "Profesjonalne podejście do klientka, duży wybór zabiegów . Daria potrafi super doradzić, co do wyboru zabiegu. Naprawdę świetne studio. Gorąco polecam 🫶"
+    },
+    {
+      "autor": "Natalia Pulczyńska",
+      "kiedy": "",
+      "tekst": "Super! Pełna profeska i meeeega miła atmosfera. Bardzo polecam!"
+    },
+    {
+      "autor": "Sylwia Żurawik",
+      "kiedy": "",
+      "tekst": "Jestem bardzo zadowolona z usług Pani Darii pełny profesjonalizm bardzo polecam"
+    },
+    {
+      "autor": "Marlena Kosewska",
+      "kiedy": "",
+      "tekst": "Pełen profesjonalizm i zaangażowanie. Efekty są widoczne bardzo szybo i długo się utrzymują. Miła i przyjazna atmosfera .....Gorąco Polecam 😊"
+    },
+    {
+      "autor": "Angelika Beszczyńska",
+      "kiedy": "",
+      "tekst": "Świetny salon — profesjonalnie, dokładnie i w miłej atmosferze. Zabiegi wykonane perfekcyjnie, a efekty super. Polecam z pełnego serca!"
+    },
+    {
+      "autor": "Daria Huzarska",
+      "kiedy": "",
+      "tekst": "Polecam,świetny kontakt,atmosfera w gabinecie , ,podejście do klientka ❤️ same plusy ❤️ pełen profesjonalizm 🙂"
+    },
+    {
+      "autor": "Zosia Samosia",
+      "kiedy": "",
+      "tekst": "Bardzo Polecam, najlepsza w swoim fachu, pełen profesjonalizm 🤩"
+    },
+    {
+      "autor": "Hdhdhdbxjxjxj Hdhdjdbxndjxj",
+      "kiedy": "",
+      "tekst": "Bardzo miła wizyta :)"
     }
   ]
 }

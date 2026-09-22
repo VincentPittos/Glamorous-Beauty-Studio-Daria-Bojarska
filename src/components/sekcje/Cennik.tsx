@@ -12,8 +12,9 @@ import style from './Cennik.module.css'
  * w sekcję od razu było widać ceny, a nie sześć zamkniętych belek.
  *
  * Ceny, których jeszcze nie mamy od Pani Darii, mają w pliku znacznik TODO.
- * Zamiast niego wchodzi zdanie o ustalaniu ceny na konsultacji, bo pokazanie
- * klientce surowego znacznika byłoby gorsze niż brak ceny.
+ * Taka pozycja pokazuje się jako sama nazwa zabiegu, bez kropkowanej linii
+ * i bez kolumny z kwotą. Pusta kolumna albo zdanie zastępcze w miejscu ceny
+ * czytają się jak usterka, a lista zabiegów bez cen czyta się normalnie.
  */
 export function Cennik() {
   const tresc = tresci.cennik
@@ -47,12 +48,12 @@ export function Cennik() {
                   {kategoria.pozycje.map((pozycja) => (
                     <li key={pozycja.nazwa} className={style.pozycja}>
                       <span className={style.nazwa}>{pozycja.nazwa}</span>
-                      <span className={style.wypelniacz} aria-hidden="true" />
-                      <span
-                        className={czekaNaDane(pozycja.cena) ? style.cenaBrak : style.cena}
-                      >
-                        {czekaNaDane(pozycja.cena) ? tresc.brakCeny : pozycja.cena}
-                      </span>
+                      {!czekaNaDane(pozycja.cena) && (
+                        <>
+                          <span className={style.wypelniacz} aria-hidden="true" />
+                          <span className={style.cena}>{pozycja.cena}</span>
+                        </>
+                      )}
                     </li>
                   ))}
                 </ul>

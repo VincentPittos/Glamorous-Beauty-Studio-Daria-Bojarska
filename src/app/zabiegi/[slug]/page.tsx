@@ -183,10 +183,12 @@ export default async function StronaFilaru({ params }: { params: Promise<{ slug:
                 {kategoria.pozycje.map((pozycja) => (
                   <li key={pozycja.nazwa}>
                     <span>{pozycja.nazwa}</span>
-                    <span className={style.wypelniacz} aria-hidden="true" />
-                    <span className={czekaNaDane(pozycja.cena) ? style.cenaBrak : style.cena}>
-                      {czekaNaDane(pozycja.cena) ? tresci.cennik.brakCeny : pozycja.cena}
-                    </span>
+                    {!czekaNaDane(pozycja.cena) && (
+                      <>
+                        <span className={style.wypelniacz} aria-hidden="true" />
+                        <span className={style.cena}>{pozycja.cena}</span>
+                      </>
+                    )}
                   </li>
                 ))}
               </ul>

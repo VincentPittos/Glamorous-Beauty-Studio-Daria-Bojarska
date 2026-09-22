@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "eslint",
     "zdjecia": "node scripts/przygotuj-zdjecia.mjs",
-    "kontrast": "node scripts/kontrast.mjs"
+    "kontrast": "node scripts/kontrast.mjs",
+    "kroj": "node scripts/podetnij-kroj-odreczny.mjs"
   },
   "dependencies": {
     "@fontsource/cormorant-garamond": "^5.2.6",
