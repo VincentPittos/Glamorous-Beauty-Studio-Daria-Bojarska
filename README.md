@@ -126,6 +126,10 @@ Zmienne środowiskowe: wzór w `.env.example`, opis w `RAPORT.md`.
   kremie, i na czekoladzie.
 - **Cennik i FAQ stoją na znacznikach `details`**, więc rozwijają się bez
   JavaScriptu i obsługują klawiaturę bez dokładania atrybutów.
+- **Zdjęcia nad linią załamania mają `loading="eager"` i `fetchPriority`,
+  nie `priority`.** Prop `priority` jest w Next.js 16 wycofany na rzecz
+  `preload`, a dokumentacja mówi wprost, żeby `preload` pominąć tam, gdzie
+  jest `fetchPriority`.
 - **Znaczniki `{TODO: ...}` nigdy nie trafiają na stronę.** Funkcje
   `czekaNaDane` i `bezZnacznikow` z `lib/dane.ts` albo chowają takie pole,
   albo podstawiają zdanie zastępcze. Dotyczy to też cen i danych
@@ -133,12 +137,14 @@ Zmienne środowiskowe: wzór w `.env.example`, opis w `RAPORT.md`.
 
 ## Wyniki
 
-Lighthouse, wersja mobilna, build produkcyjny:
+Lighthouse, wersja mobilna, build produkcyjny. Wydajność waha się między
+kolejnymi przebiegami, bo mierzona jest na symulowanym łączu, więc poniżej
+stoi zakres z kilku uruchomień, a nie jeden najlepszy wynik:
 
 | Strona | Wydajność | Dostępność | Dobre praktyki | SEO |
 | --- | --- | --- | --- | --- |
-| `/` | 96 | 100 | 100 | 100 |
-| `/zabiegi/sylwetka` | 94 | 100 | 100 | 100 |
+| `/` | 93 do 99 | 100 | 100 | 100 |
+| `/zabiegi/sylwetka` | 94 do 98 | 100 | 100 | 100 |
 
 `npm run kontrast`: 26 z 26 par przechodzi próg WCAG AA.
 

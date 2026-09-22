@@ -138,7 +138,11 @@ export function Portfolio() {
               width={portfolio[otwarte].szerokosc}
               height={portfolio[otwarte].wysokosc}
               sizes="100vw"
-              priority
+              /* Powiekszenie otwiera sie na klikniecie, wiec zdjecie ma sie
+                 pojawic natychmiast, a nie czekac na przewijanie. Prop
+                 priority jest wycofany od Next.js 16. */
+              loading="eager"
+              fetchPriority="high"
             />
             <p className={style.podpis}>{podpisZdjecia(otwarte)}</p>
 

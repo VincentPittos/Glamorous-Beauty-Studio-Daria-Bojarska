@@ -100,12 +100,17 @@ Trzy rzeczy z palety w briefie musiałem zmienić, bo nie przechodziły:
 
 ### Lighthouse, wersja mobilna, build produkcyjny
 
+Wydajność waha się między kolejnymi przebiegami, bo mierzona jest na
+symulowanym łączu. Poniżej zakres z kilku uruchomień, a nie jeden najlepszy
+wynik.
+
 | Strona | Wydajność | Dostępność | Dobre praktyki | SEO |
 | --- | --- | --- | --- | --- |
-| `/` | **96** | **100** | **100** | **100** |
-| `/zabiegi/sylwetka` | **94** | **100** | **100** | **100** |
+| `/` | **93 do 99** | **100** | **100** | **100** |
+| `/zabiegi/sylwetka` | **94 do 98** | **100** | **100** | **100** |
 
-Progi z briefu: wydajność 90, dostępność 95, SEO 100. Wszystkie przekroczone.
+Progi z briefu: wydajność 90, dostępność 95, SEO 100. Wszystkie przekroczone
+w każdym przebiegu.
 
 Po drodze naprawione zgłoszenia z audytu: kontrast złota na kartach, nagłówek
 `h4` przeskakujący poziom w kalendarzu oraz logotyp, którego nazwa dostępna

@@ -17,7 +17,13 @@ export function Hero() {
           width={762}
           height={846}
           sizes="(max-width: 980px) 100vw, 62vw"
-          priority
+          /*
+            Od Next.js 16 prop priority jest wycofany na rzecz preload.
+            Dokumentacja mowi wprost, zeby preload pominac tam, gdzie jest
+            fetchPriority, i zamiast niego uzyc loading z fetchPriority.
+            To zdjecie jest elementem LCP tej strony, wiec dostaje oba.
+          */
+          loading="eager"
           fetchPriority="high"
           /*
             Plik ma 762 piksele szerokosci i zostal przygotowany recznie

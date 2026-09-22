@@ -146,7 +146,11 @@ export default async function StronaFilaru({ params }: { params: Promise<{ slug:
                 width={800}
                 height={800}
                 sizes="(max-width: 900px) 100vw, 44vw"
-                priority
+                /* Nad linia zalamania, wiec ladujemy od razu. Prop priority
+                   jest wycofany od Next.js 16 na rzecz preload, a tego nie
+                   laczy sie z fetchPriority. */
+                loading="eager"
+                fetchPriority="high"
               />
             </div>
           </div>
